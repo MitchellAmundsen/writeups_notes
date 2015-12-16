@@ -1,0 +1,64 @@
+bandit.labs.overthewire.org
+
+Level 0:
+	ssh for remote login
+	ls to list the files
+	cat to concatanate and the readme
+
+	password: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+Level 1:
+	file name is a dash
+	use cat and refer to the file as ./-
+	./ refers to the directory so the file can be refered to
+
+	password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+Level 2:
+	spaces in file name
+	but \ before each space
+	like\ this
+
+	password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+Level 3:
+	hidden file
+	ls -a shows hidden files
+	-a flags all files including hidden files
+
+	password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Level 4:
+	looking for human readable file 
+	file ./-file07 on all files
+	will show ASCII text instead of data if human readable
+
+	password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+Level 5:
+	looking for file 1033 bytes in size, human-readable
+	find command goes through all files and searches for specific trait given
+	-size looks for given number but in blocks
+	c specifies bytes 
+
+	find -size 1033c
+
+	password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+Level 6:
+	file somewhere on the server, owned by user bandit7, owned by group bandit6, 33 bytes in size
+
+
+	find / -type f -size 33c -group bandit6 -user bandit7
+	the one without permission denied should be it
+
+	find / -user bandit7 -group bandit6 -size 33c 2>&1 | grep -v -F Permission
+	I also found this command online. it uses the grep command to help ignore the permission denied message
+
+	password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+
+
+
+
+	
