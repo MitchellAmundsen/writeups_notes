@@ -57,6 +57,54 @@ Level 6:
 
 	password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
+Level 7:
+	single data.txt file
+	contains random assortments of a number of words that have possible passwords after
+	password is after the word millionth
+
+	grep 'millionth' data.txt
+	outputs line with word millionth in data.txt
+
+	password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+Level 8:
+	occurs in data.txt in only line that occurs only once
+
+	you need to sort the file then use the uniq -u command (prints unique lines)
+	uniq only works for adjacent lines, making sorting necessary
+
+	sort data.txt | uniq -u 
+
+	password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+Level 9:
+	stored in data.txt in one of few human readable lines
+	password is preceeded by multipl '='
+
+	strings data.txt outputs printable characters in the file
+	just scrolled up and found the =========
+	strings data.txt | grep '=' will print all human readable lines with =
+
+	password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+Level 10:
+	store in data.txt which contains base64 encoding
+
+	base64 -d data.txt decodes the base64 and prints
+
+	password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+Level 11:
+	the password is in the data.txt
+	all lowercase and uppercase letters have been rotated by 13 positions
+
+	cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+	password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+Level 12:
+	
+
 
 
 
