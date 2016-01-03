@@ -105,6 +105,43 @@ Level 11:
 Level 12:
 	stored in data.txt which is a hexdump for repeatedly compressed files
 
+	"mkdir /tmp/mitchell" created a folder in the tmp directory and the forward slash checks the entire directory and not just your path
+
+	while in mitchell "cp ~/data.txt data.txt" this copies the data.txt from the users root directory (~) into a new file also named data.txt placed in current location
+
+	"xxd -r data.txt mitch.txt"
+
+	use file on each decompression to determine file type. mitch.txt is gzip compressed data
+	"mv mitch.txt mitch.gz" so you can unzip the gzip compression (gunzip only works on .gz files)
+	"gunzip mitch.gz" to unzip the gzip compression
+
+	"file mitch" to determine the file is bzip (file renamed to mitch after decompression)
+	"bunzip2 mitch" to unzip, which outputs file mitch.out
+	goes back to gzip and repeat earlier process
+
+	file becomes a POSIX tar archive 
+	"mv mitch mitch.gz" since tar decrompression requires that file type
+	"tar -xvf mitch.gz" to decompress tar file
+	-x exclude patterns listed in file
+	-v rebose (tells you what is happening instead of running silently)
+	-z gunzips the file
+
+	keep checking file type and decompressing until the file is ASCII text
+
+
+	password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+Level 13:
+	password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14
+	you get a private SSH key for this level instead of a password
+
+	
+
+
+
+
+
+
 
 
 
