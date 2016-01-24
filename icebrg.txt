@@ -1,0 +1,34 @@
+
+Common Registry Locations
+	- What is the windows registry?
+
+	The windows registry is a database that contains important informaton and settings for windows. The kernel, device drivers, services, account passwoeds, and UI all use the registry. 
+
+	- What is it used for?
+
+	windows references information from the registry thoughout operation.
+
+	- How does malware use it for persistence?
+
+	There are an array of places where code can be configured to launch automatically and remain realtively hidden away. 
+
+		- HKLM\System\CurrentControlSet\services
+
+		Service controller loads the keys located here at various times. This is where .dll (dynamic link library) files are configured to be loaded by the host process (SvcHost.exe). A common place for RATs since windows has a ton of hosted Dlls and a good amount aren't in use. These become locations to autorun the RATs.
+
+		- HKLM\Software\Microsoft\Windows NT\CurrentVersion\SVCHost
+
+		RBAC is implemented here in windows. Services are grouped together and given privledges. Services that need access to the network are group together and called "netsvcs" as defined in the string found here. Attackers will iterate over the netsvcs services and test to see if a key already exists. If a key exists, then redirecting the .dll to their own key may break the original key's function and risk exposure, so attackers will look for an empty .dll.
+
+		- HKEY_LOCAL_MAChINE\software\microsoft\windows\currentversion\run
+
+		Autoruns the listed .exe files on startup. 
+
+WMI
+
+
+
+
+
+
+
