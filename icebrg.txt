@@ -35,7 +35,11 @@ WMI
 
 	-How could an attacker use it?
 
-	Attackers can use WMI command line tool wmic.exe which extends WMI capabilities to shells and scripts. With WMI they can connect to remote systems, modify the registry, access event logs, and execute commands. This also leaves little evidence on the system. 
+	Attackers can use WMI command line tool wmic.exe which extends WMI capabilities to shells and scripts. With WMI they can connect to remote systems, modify the registry, access event logs, and execute commands.This also leaves little evidence on the system. 
+
+DLL Search Order Hijacking
+
+	
 
 
 
