@@ -25,8 +25,17 @@ Common Registry Locations
 		Autoruns the listed .exe files on startup. 
 
 WMI
+	-What does it stand for?
 
+	Windows Management Instrumentation = WMI
 
+	-How is it used for administrative tasks?
+
+	WMI is microsofts product for developing a standard technology for accessing management informaton in an enterprise environment. You can write scripts or applications to automate administrative tasks for PCs and servers remotely or locally. 
+
+	-How could an attacker use it?
+
+	Attackers can use WMI command line tool wmic.exe which extends WMI capabilities to shells and scripts. With WMI they can connect to remote systems, modify the registry, access event logs, and execute commands. This also leaves little evidence on the system. 
 
 
 
