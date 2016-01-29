@@ -2,7 +2,7 @@
 Common Registry Locations
 	- What is the windows registry?
 
-	The windows registry is a database that contains important informaton and settings for windows. The kernel, device drivers, services, account passwoeds, and UI all use the registry. 
+	The windows registry is a database that contains important informaton and settings for windows. The kernel, device drivers, services, account passwords, and UI all use the registry. 
 
 	- What is it used for?
 
