@@ -35,9 +35,45 @@ WMI
 
 	-How could an attacker use it?
 
-	Attackers can use WMI command line tool wmic.exe which extends WMI capabilities to shells and scripts. With WMI they can connect to remote systems, modify the registry, access event logs, and execute commands. This also leaves little evidence on the system. 
+	Attackers can use WMI command line tool wmic.exe which extends WMI capabilities to shells and scripts. With WMI they can connect to remote systems, modify the registry, access event logs, and execute commands.This also leaves little evidence on the system. 
 
+DLL Search Order Hijacking
 
+	DLL (dynamic link library) files are collections of data and executable code that applications are other DLL files will use. They are essentially driver files for applications. Putting data in DLL files make it easier to update since you can just update the small file instead of the entire application. Programmers don't specify the path of every DLL file, so Microsoft made a DLL search order. 
 
+	Directory of application
+	Current directory
+	System directory
+	16-bit system directory
+	Windows directory
+	Directories in PATH variable
 
+	It takes the first DLL file found in the search order. If application needs a file named "driver.dll" which is located in system directory, an attacker could place their own "driver.dll" file in the current directory. This DLL file could have executables and run malware or anything that the attacker may want.
+
+	https://www.exploit-db.com/docs/31687.pdf
+
+DLL Side Loading
+
+	DLL side loading is a less common variant of DLL search order hijacking. It uses Windows side-by-side (SxS or WinSxS), which helps manage conflicting duplicate DLL cersions by loading them on demand from a common directory. Side loading uses SxS to load malicious DLL from the SxS listing, located at the following registries.
+
+	%TEMP%\RarSFX%\%ALLUSERS PROFILE%\SXS\
+	or
+	%TEMP%\RarSFX%\%ALLUSERS PROFILE%\WinSxS\
+
+	WinSxS is a tool for developers to update or replace older DLL files with ease. WinSxS reduces the possibility of DLL version conflict, enables versions of COM or Windows assemblies to run simultaneuously, and updates assembly configuration on a global or per-application config basis after deployment. Because of this, there is little to no validation of the loaded DLL. It is essentially a DLL backdoor for developers that can be abused.
+
+gh0st
+
+	gh0st is a remote access trojan tool for windows. It can do the following:
+
+	-take full control of the remote screen on the infected bot
+	-provide real time as well as offline keystroke logging
+	-provide live feed of webcam, microphone of infected host
+	-take control of temore shutdown and reboot of host
+	-disable infected computer remote pointer and keyboard input
+	-enter into shell of remote infected host with full control
+	-provide a list of all the active processes
+	-clear all existing SSDT of all existing hooks
+
+	
 
