@@ -84,6 +84,32 @@ gh0st
 	-a 4-byte integer that contains the size in bytes of the entire packet uncompressed
 	-a variable-sized packet that contains the packet payload. The client sends small requests that contain commands, and the server repsponds to those commands with the requested data. 
 
+	Detecting gh0st is trivial due to the 5-byte handshake, and a proper IDS(intrusion detection system) should be able to find a gh0st packet. Gh0st RATs are more complicated and harder to find nowadays. Some things to look for with include:
+
+	Network Monitoring
+		-outbound port 80 and 443 traffic to IP addresses and URLs in easter europe
+		-outbound port 80 traffic connecting to remote server without sending user-agent information
+		-create IDS signatures to detect the unique data content at the end of the dropper application
+		-create IDS signatures to detect embedded executable files withing executable files
+
+	Internal Port Scans
+		Look for unexplained open TCP ports since gh0st needs to establish persistent connections. Routinely scan you internal network for suspicious open ports on systems/workstations.
+
+	Monitor DNS Servers
+		Logging DNS requests, since most modern malware uses dynamic DNS. One can configure their DNS server to log or alert on any request to dynamic DNS locations. Logging all DNS requests to Eastern Europe is also a good idea.
+
+	Closely Monitor end-node services
+		Use of rootkits by attackers has increased recently, which is designed to run in Ring 0 (ring network) alongside the kernel as a device driver. Most malware still runs in Ring 3 (user node) since driver programming is more difficult and less people can do it. Because of this, most malware is running as a service and hiding in plain sight. 
+
+	Closely monitor end-node event logs
+		If you are monitoring services on end nodes, than you should also be monitoring Windows event logs. Turn on auditing and enable logging for both successful and fail logins. Pay close attention to security event entries 528 and 540 (successful logs). Of these, look for logon types 3 (SMB shares) and 10 (RDP), then identify the logon account. Intruders will try to connect to another machine with elevated privlged accounts via SMB admin shares or using remote desktop. Monitor event logs for this activity. 
+
+Poison Ivy
+	
+	
+
+
+
 
 
 
