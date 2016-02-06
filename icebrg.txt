@@ -75,5 +75,16 @@ gh0st
 	-provide a list of all the active processes
 	-clear all existing SSDT of all existing hooks
 
-	
+	The DLL is named SVCHOST.DLL. This is the server component of the gh0st toolkit and and checks in to the gh0st client application on startup. It is installed by the dropper program server.exe.
+
+	A gh0st packet contains the following four fields:
+
+	-a 5-byte header containing the characters Gh0st
+	-a 4-byte integer that contains the size in bytes of the entire packet
+	-a 4-byte integer that contains the size in bytes of the entire packet uncompressed
+	-a variable-sized packet that contains the packet payload. The client sends small requests that contain commands, and the server repsponds to those commands with the requested data. 
+
+
+
+
 
