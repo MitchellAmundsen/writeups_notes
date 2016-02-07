@@ -106,7 +106,18 @@ gh0st
 
 Poison Ivy
 	
-	
+	Poison Ivy is a RAT that is created and controlled by a Poision Ivy management program. The management program has a GUI. Once ran, the backdoor copies itself to either the Windows folder or the system32 folder. Filename and location are decided by the creator of the backdoor. The registry is altered to for persistence. Poison Ivy give a large amount of control over the infected computer including:
+
+	-files can be renamed, deleted, executed
+	-files can be uploaded and downloaded to and from the system
+	-registry can be edited
+	-currently run process can be viewed and killed
+	-services can be viewed and controlled
+	-installed devices can be viewed and some devices can be disabled
+	-the list of applications can be viewed and entries can be deleted or programs uninstalled
+	-remote command shell
+	-screen capture or webcam
+	-access saved passwords and password hashes
 
 
 
