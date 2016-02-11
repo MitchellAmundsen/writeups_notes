@@ -1,0 +1,73 @@
+-crypto
+	-caesar
+	-rot13 - similar to caesar except using key 13
+	-rot47
+		-hard to recognize
+		-detection
+			-characters adcii in range 0x21 - 0x7f
+			-lots of non-alphabetical characters
+			-characters are all printable
+	-substitution
+		-detection
+			-mostly alphabets
+			-normally long ciphertext
+		-solution
+			-frequency analysis 
+			-pattern recognition (quipquip)
+	-vigenere
+		-key: aplhabetical string of arbitrary length
+		-first letter of key with first letter of plaintext
+		-key repeats
+	-playfair ciphet (not so common)
+		-key: table of 5X5 alphabet or a keyword
+		-useful site: rumkin
+	-one-time pad
+		-key: string of bytes same length as plaintext
+		-encryption: XOR the key with message byte by byte
+		-don't use it because if you transfer the key in a secure channel, we might as well transfer the plaintext in the same channel (same length)
+	-multi-time pad
+	-repeated key XOR
+		-key: string of bytes of any length smaller than message size
+		-encryption: repeat the key multiple times until it reaches the size of the message then XOR the key with the message byte by byte
+		-detection: pattern repitition (if padded with null bytes or plaintext also has some kind of repition)
+		-first compute hamming distance of different key length and choose minimum one and can solve with key length)
+	-symmetric
+		-encryption and decryption use the same key
+		-stream cipher
+			-symmetric key cipher where plaintext digits are combined with pseudorandom cipher digit stream
+			-common stream ciphers
+				-all ones covered previously
+				-RC4 (really broken)
+				-Salsa20
+		-block cipher
+			-common block ciphers
+				-DES (broken, key space too small)
+				-3DES(somewhat safe)
+				-AES(safe)
+				-blowfish(safe)
+			-what is it
+				-plain text is seperated into blocks of n-bits size
+				-each block is encrypted with the specific algorithm
+				-join the encyrpted blocks together to form ciphertext
+			-padding used before encryption to make sure plaintext is multiple of block size
+-encoding
+	-base64: only contains 
+		- A-z
+		- 0-9
+		- =\+
+		- usually ends with one or more ==
+	-base16(hex)
+		- a-f
+		- 0-9
+		- sometimes starts with 0x
+	-octal
+		-only contains 0-7
+		-starts with either o or 0
+	-binary
+		-only contains 0,1
+		-sometimes starts with 0b
+	-morse
+		-only contains .,_
+		-sometimes represented with 0 or 1
+
+
