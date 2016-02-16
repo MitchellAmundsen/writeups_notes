@@ -119,7 +119,41 @@ Poison Ivy
 	-screen capture or webcam
 	-access saved passwords and password hashes
 
+HTTP
+	
+	-HTTP: Hyper Text Transfer Protocol
+	-OSI Stack: Application Layer
+	-Port: 80, 443 (HTTPS)
 
+SMTP
+
+	-SMTP: Simple Mail Transfer Protocol
+	-OSI Stack: Application Layer
+	-Port: 25, 587 (mail submission), 465 (SMTPS, legacy)
+
+DNS
+	
+	-DNS: Domain Name System
+	-OSI Stack: Application Layer
+	-Port: 53 (UDP)
+
+SSL
+
+	-SSL: Secure Sockey Layer
+	-OSI Stack: Application Layer
+	-Port: changes port of effected protocol (HTTPS 443)
+
+FTP
+
+	-FTP: File Transfer Protocol
+	-OSI Stack: Application Layer
+	-Port: 21 (control), 20 (data)
+
+SMB
+
+	-SMB: Server Message Block
+	-OSI Stack: Application Layer
+	-Port: 445 (on top of TCP port)
 
 
 
