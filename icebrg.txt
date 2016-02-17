@@ -2,27 +2,27 @@
 Common Registry Locations
 	- What is the windows registry?
 
-	The windows registry is a database that contains important informaton and settings for windows. The kernel, device drivers, services, account passwords, and UI all use the registry. 
+	The windows registry is a database that contains important information and settings for windows. The kernel, device drivers, services, account passwords, and UI all use the registry. 
 
 	- What is it used for?
 
-	windows references information from the registry thoughout operation.
+	Windows references information from the registry throughout operation.
 
 	- How does malware use it for persistence?
 
-	There are an array of places where code can be configured to launch automatically and remain realtively hidden away. 
+	There are an array of places where code can be configured to launch automatically and remain relatively hidden away. 
 
 		- HKLM\System\CurrentControlSet\services
 
-		Service controller loads the keys located here at various times. This is where .dll (dynamic link library) files are configured to be loaded by the host process (SvcHost.exe). A common place for RATs since windows has a ton of hosted Dlls and a good amount aren't in use. These become locations to autorun the RATs.
+		Service controller loads the keys located here at various times. This is where .dll (dynamic link library) files are configured to be loaded by the host process (SvcHost.exe). A common place for RATs since windows has a ton of hosted Dlls and a good amount aren't in use. These become locations to auto run the RATs.
 
 		- HKLM\Software\Microsoft\Windows NT\CurrentVersion\SVCHost
 
-		RBAC is implemented here in windows. Services are grouped together and given privledges. Services that need access to the network are group together and called "netsvcs" as defined in the string found here. Attackers will iterate over the netsvcs services and test to see if a key already exists. If a key exists, then redirecting the .dll to their own key may break the original key's function and risk exposure, so attackers will look for an empty .dll.
+		RBAC is implemented here in windows. Services are grouped together and given privileges. Services that need access to the network are group together and called "netsvcs" as defined in the string found here. Attackers will iterate over the netsvcs services and test to see if a key already exists. If a key exists, then redirecting the .dll to their own key may break the original key's function and risk exposure, so attackers will look for an empty .dll.
 
 		- HKEY_LOCAL_MAChINE\software\microsoft\windows\currentversion\run
 
-		Autoruns the listed .exe files on startup. 
+		Auto runs the listed .exe files on startup. 
 
 WMI
 	-What does it stand for?
@@ -31,11 +31,11 @@ WMI
 
 	-How is it used for administrative tasks?
 
-	WMI is microsofts product for developing a standard technology for accessing management informaton in an enterprise environment. You can write scripts or applications to automate administrative tasks for PCs and servers remotely or locally. 
+	WMI is Microsoft product for developing a standard technology for accessing management information in an enterprise environment. You can write scripts or applications to automate administrative tasks for PCs and servers remotely or locally. 
 
 	-How could an attacker use it?
 
-	Attackers can use WMI command line tool wmic.exe which extends WMI capabilities to shells and scripts. With WMI they can connect to remote systems, modify the registry, access event logs, and execute commands.This also leaves little evidence on the system. 
+	Attackers can use WMI command line tool wmic.exe which extends WMI capabilities to shells and scripts. With WMI they can connect to remote systems, modify the registry, access event logs, and execute commands. This also leaves little evidence on the system. 
 
 DLL Search Order Hijacking
 
@@ -54,22 +54,22 @@ DLL Search Order Hijacking
 
 DLL Side Loading
 
-	DLL side loading is a less common variant of DLL search order hijacking. It uses Windows side-by-side (SxS or WinSxS), which helps manage conflicting duplicate DLL cersions by loading them on demand from a common directory. Side loading uses SxS to load malicious DLL from the SxS listing, located at the following registries.
+	DLL side loading is a less common variant of DLL search order hijacking. It uses Windows side-by-side (SxS or WinSxS), which helps manage conflicting duplicate DLL versions by loading them on demand from a common directory. Side loading uses SxS to load malicious DLL from the SxS listing, located at the following registries.
 
 	%TEMP%\RarSFX%\%ALLUSERS PROFILE%\SXS\
 	or
 	%TEMP%\RarSFX%\%ALLUSERS PROFILE%\WinSxS\
 
-	WinSxS is a tool for developers to update or replace older DLL files with ease. WinSxS reduces the possibility of DLL version conflict, enables versions of COM or Windows assemblies to run simultaneuously, and updates assembly configuration on a global or per-application config basis after deployment. Because of this, there is little to no validation of the loaded DLL. It is essentially a DLL backdoor for developers that can be abused.
+	WinSxS is a tool for developers to update or replace older DLL files with ease. WinSxS reduces the possibility of DLL version conflict, enables versions of COM or Windows assemblies to run simultaneously, and updates assembly configuration on a global or per-application config basis after deployment. Because of this, there is little to no validation of the loaded DLL. It is essentially a DLL backdoor for developers that can be abused.
 
 gh0st
 
-	gh0st is a remote access trojan tool for windows. It can do the following:
+	gh0st is a remote access Trojan tool for windows. It can do the following:
 
 	-take full control of the remote screen on the infected bot
 	-provide real time as well as offline keystroke logging
 	-provide live feed of webcam, microphone of infected host
-	-take control of temore shutdown and reboot of host
+	-take control of remote shutdown and reboot of host
 	-disable infected computer remote pointer and keyboard input
 	-enter into shell of remote infected host with full control
 	-provide a list of all the active processes
@@ -82,15 +82,15 @@ gh0st
 	-a 5-byte header containing the characters Gh0st
 	-a 4-byte integer that contains the size in bytes of the entire packet
 	-a 4-byte integer that contains the size in bytes of the entire packet uncompressed
-	-a variable-sized packet that contains the packet payload. The client sends small requests that contain commands, and the server repsponds to those commands with the requested data. 
+	-a variable-sized packet that contains the packet payload. The client sends small requests that contain commands, and the server responds to those commands with the requested data. 
 
-	Detecting gh0st is trivial due to the 5-byte handshake, and a proper IDS(intrusion detection system) should be able to find a gh0st packet. Gh0st RATs are more complicated and harder to find nowadays. Some things to look for with include:
+	Detecting gh0st is trivial due to the 5-byte handshake, and a proper IDS (intrusion detection system) should be able to find a gh0st packet. Gh0st RATs are more complicated and harder to find nowadays. Some things to look for with include:
 
 	Network Monitoring
-		-outbound port 80 and 443 traffic to IP addresses and URLs in easter europe
+		-outbound port 80 and 443 traffic to IP addresses and URLs in Eastern Europe
 		-outbound port 80 traffic connecting to remote server without sending user-agent information
 		-create IDS signatures to detect the unique data content at the end of the dropper application
-		-create IDS signatures to detect embedded executable files withing executable files
+		-create IDS signatures to detect embedded executable files
 
 	Internal Port Scans
 		Look for unexplained open TCP ports since gh0st needs to establish persistent connections. Routinely scan you internal network for suspicious open ports on systems/workstations.
@@ -98,15 +98,15 @@ gh0st
 	Monitor DNS Servers
 		Logging DNS requests, since most modern malware uses dynamic DNS. One can configure their DNS server to log or alert on any request to dynamic DNS locations. Logging all DNS requests to Eastern Europe is also a good idea.
 
-	Closely Monitor end-node services
+	Closely monitor end-node services
 		Use of rootkits by attackers has increased recently, which is designed to run in Ring 0 (ring network) alongside the kernel as a device driver. Most malware still runs in Ring 3 (user node) since driver programming is more difficult and less people can do it. Because of this, most malware is running as a service and hiding in plain sight. 
 
 	Closely monitor end-node event logs
-		If you are monitoring services on end nodes, than you should also be monitoring Windows event logs. Turn on auditing and enable logging for both successful and fail logins. Pay close attention to security event entries 528 and 540 (successful logs). Of these, look for logon types 3 (SMB shares) and 10 (RDP), then identify the logon account. Intruders will try to connect to another machine with elevated privlged accounts via SMB admin shares or using remote desktop. Monitor event logs for this activity. 
+		If you are monitoring services on end nodes, than you should also be monitoring Windows event logs. Turn on auditing and enable logging for both successful and fail logins. Pay close attention to security event entries 528 and 540 (successful logs). Of these, look for logon types 3 (SMB shares) and 10 (RDP), then identify the logon account. Intruders will try to connect to another machine with elevated privileged accounts via SMB admin shares or using remote desktop. Monitor event logs for this activity. 
 
 Poison Ivy
 	
-	Poison Ivy is a RAT that is created and controlled by a Poision Ivy management program. The management program has a GUI. Once ran, the backdoor copies itself to either the Windows folder or the system32 folder. Filename and location are decided by the creator of the backdoor. The registry is altered to for persistence. Poison Ivy give a large amount of control over the infected computer including:
+	Poison Ivy is a RAT that is created and controlled by a Poison Ivy management program. The management program has a GUI. Once ran, the backdoor copies itself to either the Windows folder or the system32 folder. Filename and location are decided by the creator of the backdoor. The registry is altered to for persistence. Poison Ivy give a large amount of control over the infected computer including:
 
 	-files can be renamed, deleted, executed
 	-files can be uploaded and downloaded to and from the system
@@ -118,9 +118,46 @@ Poison Ivy
 	-remote command shell
 	-screen capture or webcam
 	-access saved passwords and password hashes
-	-
+
+HTTP
+	
+	-HTTP: Hyper Text Transfer Protocol
+	-OSI Stack: Application Layer
+	-Port: 80, 443 (HTTPS)
+
+	Used for distributed, collaborative, hypermedia information systems. It is a generic, stateless protocol that can be used for tasks other than hypertext. This includes name servers and distributed object management systems, through extension of its request methods, error codes and headers. Typing and negotiation of data representation allows systems to be built independently of the data being transferred.
 
 
+
+SMTP
+
+	-SMTP: Simple Mail Transfer Protocol
+	-OSI Stack: Application Layer
+	-Port: 25, 587 (mail submission), 465 (SMTPS, legacy)
+
+DNS
+	
+	-DNS: Domain Name System
+	-OSI Stack: Application Layer
+	-Port: 53 (UDP)
+
+SSL
+
+	-SSL: Secure Socket Layer
+	-OSI Stack: Application Layer
+	-Port: changes port of effected protocol (HTTPS 443)
+
+FTP
+
+	-FTP: File Transfer Protocol
+	-OSI Stack: Application Layer
+	-Port: 21 (control), 20 (data)
+
+SMB
+
+	-SMB: Server Message Block
+	-OSI Stack: Application Layer
+	-Port: 445 (on top of TCP port)
 
 
 
