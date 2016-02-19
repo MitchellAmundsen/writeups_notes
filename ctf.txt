@@ -70,4 +70,33 @@
 		-only contains .,_
 		-sometimes represented with 0 or 1
 
+-mess with red team?
+	-spotlight to the face
+		-leave thousands of ports open
+		-tar pit
+			-syn/ack
+				-client sends syn packet
+				-server sends syn/ack packet back
+				-server forgets about client
+				-client sends ack packet to get into port
+			-windows size 0
+				-complete syn/ack sucessfully
+				-sends window size 0
+				-client must wait to get in
+		-RNG packet dropping
+			-nmap thinks it's slowing connection and slows down
+			-constantly slows connection of nmap user
+			-never finished nmap scan
+		-setup open ports with games
+			-detects attacking users
+			-wastes time
+	-breaking stuff
+		-diable PHP (see if scoring system still works, dynamic/static)
+		-chroot jail
+		-linux capabilities
+	
+
+
+
+
 

@@ -127,13 +127,15 @@ HTTP
 
 	Used for distributed, collaborative, hypermedia information systems. It is a generic, stateless protocol that can be used for tasks other than hypertext. This includes name servers and distributed object management systems, through extension of its request methods, error codes and headers. Typing and negotiation of data representation allows systems to be built independently of the data being transferred.
 
-
+	HTTP is a request/response protocol. The client sens a request to the server with a URI and protocol version, followed by a MIME-like message containing request modifiers, client information, and possible body content. The server responds with a status line including the message's protocol version, a success/error code, and another MIME-like message. This message contains server information, entity metainformation, and possible entity-body content.
 
 SMTP
 
 	-SMTP: Simple Mail Transfer Protocol
 	-OSI Stack: Application Layer
 	-Port: 25, 587 (mail submission), 465 (SMTPS, legacy)
+
+	SMTP is a protocol used in sending and receiving mail. SMTP is typically used for sending emails and POP3 and IMAP for receiving email.It doesn't have the ability to queue messages, which is the reason for POP3 and IMAP being used for users saving messages in a server mailbox.
 
 DNS
 	
