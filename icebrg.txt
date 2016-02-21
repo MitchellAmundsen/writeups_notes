@@ -125,9 +125,9 @@ HTTP
 	-OSI Stack: Application Layer
 	-Port: 80, 443 (HTTPS)
 
-	Used for distributed, collaborative, hypermedia information systems. It is a generic, stateless protocol that can be used for tasks other than hypertext. This includes name servers and distributed object management systems, through extension of its request methods, error codes and headers. Typing and negotiation of data representation allows systems to be built independently of the data being transferred.
+	Used for distributed, collaborative, hypermedia information systems. It is a generic, stateless protocol that can be used for tasks other than hypertext. This includes name servers and distributed object management systems, through extension of its request methods, error codes and headers. Typing and negotiation of data representation allows systems to be built independently of the data being transferred
 
-	HTTP is a request/response protocol. The client sens a request to the server with a URI and protocol version, followed by a MIME-like message containing request modifiers, client information, and possible body content. The server responds with a status line including the message's protocol version, a success/error code, and another MIME-like message. This message contains server information, entity metainformation, and possible entity-body content.
+	HTTP is a request/response protocol. The client sends a request to the server with a URI and protocol version, followed by a MIME-like message containing request modifiers, client information, and possible body content. The server responds with a status line including the message's protocol version, a success/error code, and another MIME-like message. This message contains server information, entity metainformation, and possible entity-body content.
 
 SMTP
 
@@ -143,25 +143,37 @@ DNS
 	-OSI Stack: Application Layer
 	-Port: 53 (UDP)
 
+	DNS is a naming system for computers, services, and any resources connected to a network. The DNS protocol is stateless and each packet has a header, question, answer, authority, and additional information field. 
+
+	-Header: 12-byte header for destination information
+	-Question: The question field is the only field in a query message. It contains Name, Type, and Class tuples (list object). For internet purposes, the name field is a fully-qualified domain name, the class is IN, and the type is a valid RR (resource records) type. The names can't be wildcarded but types and classes can be. Special types exist to wildcard mail record and to trigger zone transfers.
+	-Answers: RRs that match the name, type, and class tuple of the question field. If any of the matching records are CNAME pointers (association to subdomain for another DNS lookup), then the target record is included in the answer. There can be multiple answers in the field since there can be multiple RRs with the same label.
+	-Authority: Optional field that are RRs type NS records. NS records is used to delegate a subdomain to a set of name servers.
+	-Additional: Records that the name server believes may be useful to the client. Most commonly used to supply address records for the name servers listed in the authority section.
+
 SSL
 
 	-SSL: Secure Socket Layer
-	-OSI Stack: Application Layer
+	-OSI Stack: Application/Session Layer
 	-Port: changes port of effected protocol (HTTPS 443)
+
+	SSL and TLS are the most widely used security protocols. It provides a secure channel between two machines operating over the internet or a private network. HTTP over port 80 is susceptible to eavesdropping, but SSL ensures that the information is encrypted and secure. It is a session encrpytion wrapper for the HTTP protocol.
 
 FTP
 
 	-FTP: File Transfer Protocol
 	-OSI Stack: Application Layer
-	-Port: 21 (control), 20 (data)
+	-Port: 21 (control), 20 (data), 22 (SFTP)
+
+	FTP is a client to server protocol that relies on a command channel for controlling conversation and a sata channel for transmitting file content. Using FTP, a client can upload, download, rename, move, and copy files on a server. Login is required for an FTP server unless anonymous FTP is available. FTP sessions can be passive or active modes. In active mode, the server initiates a data connection back to the client and begins transferring data. In passive mode, the server uses a command channel to send the client information to open a data channel. HTTP no handles a lot of file transfering, but FTP is still used to transfer files behind the scenes.
 
 SMB
 
-	-SMB: Server Message Block
+	-SMB: Server Message Block 
 	-OSI Stack: Application Layer
 	-Port: 445 (on top of TCP port)
 
-
+	SMB is a network file sharing protocol that allows applications to read and write to files and to request services from server programs in a computer network. The user of applications that use SMB can access files at a remote server as well as printers, mailslots, and named pipes. An open source version of SMB is called CIFS (common internet files system), and it provides more flexibility than existing internet applications like FTP. The Samba server is the most commonely used SMB/CIFS server.
 
 
 
