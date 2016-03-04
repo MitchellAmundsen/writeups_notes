@@ -94,6 +94,42 @@
 		-diable PHP (see if scoring system still works, dynamic/static)
 		-chroot jail
 		-linux capabilities
+
+-cross site request forgery (CSRF): attack forces an authenticated user to excute action
+	-how
+		-session cookie given for authentication
+		-get/post request used for executing actions
+		-image tag or any tag fetching source goes to given url
+		-can put get request in source url of tag
+		-if user is authenticated via cookies, then get request is validated
+	-wrong way to fix
+		-create an anti-csrf cookie with a random value
+		-multi-step action
+		-check the referer header
+			-referer header shows where request comes from
+			-checking referer header may cause problems to user
+	-right way to fix
+		-anti-csrf token
+			-every state changing request should have one
+			-sumbitted as hidden html form field
+			-unique per user and session
+			-large and random
+		-asp.net viewstate
+			-indicated the status of the current page
+			-include the viewstateuserkey to make guessing nearly impossible
+		-double submit cookies
+			-sends random value as a cookie and request parameter
+			-site checks to make sure both match
+		-encrypted token
+			-create encrypted token of user secret
+			-ajax requests include the token as a header value
+			-decrypt the token for each request and check the value
+			-token van be sumbitted in a hidden-form field for non-ajax requests
+		-challenge and response
+			-CAPTCHA
+			-one time token
+		-have no XSS in you application
+
 	
 
 

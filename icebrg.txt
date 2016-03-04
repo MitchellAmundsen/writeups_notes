@@ -20,7 +20,7 @@ Common Registry Locations
 
 		RBAC is implemented here in windows. Services are grouped together and given privileges. Services that need access to the network are group together and called "netsvcs" as defined in the string found here. Attackers will iterate over the netsvcs services and test to see if a key already exists. If a key exists, then redirecting the .dll to their own key may break the original key's function and risk exposure, so attackers will look for an empty .dll.
 
-		- HKEY_LOCAL_MAChINE\software\microsoft\windows\currentversion\run
+		- HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run
 
 		Auto runs the listed .exe files on startup. 
 
@@ -174,6 +174,58 @@ SMB
 	-Port: 445 (on top of TCP port)
 
 	SMB is a network file sharing protocol that allows applications to read and write to files and to request services from server programs in a computer network. The user of applications that use SMB can access files at a remote server as well as printers, mailslots, and named pipes. An open source version of SMB is called CIFS (common internet files system), and it provides more flexibility than existing internet applications like FTP. The Samba server is the most commonely used SMB/CIFS server.
+
+Base64
+
+	Base64 describes a type of encoding that encodes binary data by treating it numerically and making it a base64 representation. It is used to encode binary data that needs to be stored and transferred over media that are designed to deal with textual data. It most commonly uses A-Z, a-z, and 0-9 for the first 62 values. Different variations of base64 use different values for the last two.
+
+	VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==
+
+URL Encoding
+	
+	URLs can only be sent using ASCII characters. If a URL containts characters outside the ASCII set, the URL must be converted to valid form. URL encoding replaces invalid ADCII characters with a "%" followed by two hexadecimal digits. For example, a URL encoding replaces spaces with a "+" sign or with "%20". 
+
+	The%20quick%20brown%20fox
+
+Quoted-Printable
+	
+	QP is encoding using printable ASCII characters to transmot 8-bit data over a 7-bit path, or any medium that cannot you 8-bit. It uses the "=" sign as an escape character. Line length is limited to 76 characters as well. Any 8-bit byte may be encoded with 3 characters, an "=" followed by two hexadecimal digits. All characters except printable ADCII characters or end of line characters must be encoded in this fashion. 
+
+	If you believe that truth=3Dbeauty, then surely mathematics is the most bea=
+	utiful branch of philosophy.
+
+Unicode
+
+	Unicode converts any unique character into a different number. It is the industry standard for encoding, representing, and handling text expressed in most of the world's writing systems. Unicode defines the code points (the number which represents a character), but the encoding determines how you store these points. 
+
+Punycode
+
+	Punycode is a way to represent Unicode with the limited characters of ASCII. The intended purpose is to encode international domain names so they can be present in the ASCII DNS on the internet. It removes the international symbols from the word, then adds a "-" with the corresponding code for the symbol at the end.
+
+	München
+	Mnchen-3ya
+
+IDNs
+	
+	IDN stands for Internationalized Domain Name, and represents the domain names for any domain name that contains a language specific character. IDNs are encoded by computers using multi-byte Unicode and are stored in the DNS as ASCII using Punycode.
+
+MIME - S/MIME
+
+	MIME is an extension of the original email protocol that allows users to exchange different kinds of data files (audio, video, images, executables) along with the ASCII allowed in SMTP. Servers insert the MIME header at the beginning of a web transmission. Clients use this header to select the right application player for the type of data. 
+
+Drive-by exploits & exploit kits
+
+	Drive-by downloads describe an umbrella attack of visiting a website that is running malicious code. Most of the time these are compromised legit sites that redirect a victim to an attacker's site. These sites host exploit kits that probe browsers and other software of security vulnerabilities to attack. 
+
+	Exploit kits are toolkits that automate the process of finding exploits for client-side vulnerabilities. 
+
+
+	
+
+
+
+
+
 
 
 
