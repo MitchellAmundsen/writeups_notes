@@ -217,7 +217,7 @@ Drive-by exploits & exploit kits
 
 	Drive-by downloads describe an umbrella attack of visiting a website that is running malicious code. Most of the time these are compromised legit sites that redirect a victim to an attacker's site. These sites host exploit kits that probe browsers and other software of security vulnerabilities to attack. 
 
-	Exploit kits are toolkits that automate the process of finding exploits for client-side vulnerabilities. It is a launching platform used to deliver other payloads, like malware. The exploit kit is ran on a malicious site and finds existing vulnerabilities in the system. From there it performs a drive-by download and downloads malicious software without the user knowing. Exploit kits in the present have easy to use UIs and make malicious activity and can even allow registered users to logon and view active victims and statistics. 
+	Exploit kits are toolkits that automate the process of finding exploits for client-side vulnerabilities. It is a launching platform used to deliver other payloads, like malware. The exploit kit is ran on a malicious site and finds existing vulnerabilities in the system. From there it performs a drive-by download and downloads malicious software without the user knowing. Exploit kits in the present have easy to use UIs and make malicious activity and can even allow registered users to logon and view active victims and statistics. Owners of exploit kits will often encode the PHP scripts for proprietary reasons, with tools like ionCube.
 
 
 	
