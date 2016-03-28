@@ -1,0 +1,23 @@
+print: outputs the following text in the console
+#: comment indicator
++: addition
+-: subtraction
+%: mod shows leftover after division (multiplication and division before in op order
+*: multiplication
+/: division
+>: greater than
+>=: greater than or equal to
+%s (d, r): inserts a string, variable, or data in line (ex: "my name is %s" %("mitchell"))
+""": everything until the next """ is in quotations including new lines
+\: escape sequence for a number of shortcuts
+raw_input(): takes input from console, parameter is printed before asking for raw input
+import: imports the features you will use from the python feature set (modules/libraries)
+argv: takes arguments when running script
+open(): opens files name given as parameter, second parameter changes what is done to the file (w for write)
+read(): reads the opened file 
+close(): closes the file so it is no longer effected by script
+truncate(): deletes all text in file
+len(): returns the length of an object, argument can be a sequence or collection
+exists(): returns true if the files exists based on the name string argument
+seek(): sets the reader of the files at the given line number in the argument
+readline(): reads the next line (similar to .next()) in java
