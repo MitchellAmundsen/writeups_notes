@@ -1,0 +1,216 @@
+
+Chapter 1
+	- commands
+		- which
+			- finds out if relevant binary is already in your search path
+			- ex: which gcc ---> /opt/pware/bin/gcc
+		- whereis
+			- searches a broader range of system directories independent of current path
+		- locate
+			- uses precompiled index of filesystem to locate filesnames that match a pattern
+			- part of GNU findutils package which is included by most linux systems by default
+			- can find any type or file
+		- apt-get
+			- used to install packages
+			- different for different types of linux
+			- ex: apt-get install wget
+
+Chapter 2
+	- pipes and redirection
+		- STDIN reads from the keyboard
+			- < symbol connects the commands STDIN to the contents of a file
+		- STDOUT and STDERR write output to the screen
+			- > redirects STDOUT to replace files existing content
+			- >> appends to file
+		- && to exectutes second command in single lines
+		- || executes second command if first one fails
+	- variables
+		- unmarked when assigned but prefixed with dollar sign if referenced
+		- ex: var='/etc'
+			  echo $var ---> /etc
+		- good style to surround variable name with {} when referencing 
+		- local variables usually lower case
+		- environment variables or variables from global config files usually all caps
+		- export 'varname' to promote shell variable to environment variable
+		- commands for environment variables should be included in ~/.profile or ~/.bash_profile file
+	- common filter commands
+		- cut: seperates lines into fields
+		- sort: sort lines
+		- uniq: print unique lines
+		- wc: counts lines, words, and characters
+		- tee: copy input to two places
+		- head and tail: read the beginning or end of a file
+		- grep: search text
+	- bash scripting
+		- comments start with # and continue to end of the line
+		- shebang statement
+			-declares the text file to be a script for interpretation by bash
+			- ex: #!/bin/bash
+			- would be location of bash
+			- bash helloworld: runs helloworld in new instance of bash
+			- source helloworld: makes existing login shell read and execute the contents of the file
+		- summary approach
+			- develop the script as a pipeline, one step at a time, entirely on the command line
+			- send output to STDOUT and check to make sure it looks right
+			- use shell's command history to recall pipelines and the shell's editing features to tweak them
+			- until the output looks right, you haven't actually done anything, so there's nothing to undo if the command is wrong
+			- once the output is correct, execute the actual commands and verify that they worked as you intended
+			- use fc to capture your work, then clean it up and save it
+		- input and output
+			- echo: crude and easy output
+				- ex: echo "aa\tbb\tcc" ---> aa\tbb\tcc
+			- printf: outputs with more control but less convenient
+				- ex: printf "aa\tbb\tcc" --> aa   bb	cc
+			- read: promt user for input
+				- ex: read var
+		- variable scope
+			- variables are global within a script unless created with local declaration
+			- variable has local value until outside of function
+		- control flow
+			- if [] && []; then
+			- elif []; then
+			- special operators
+				- -n x: x is not null
+				- -z x: x is null
+				- -d file: file exists and is a directory
+				- -e file: file exists
+				- -f file: file exists and is a regular file
+				- -r file: you have read permission on file
+				- -s file: file exists and is not empty
+				- -w file: you have write permission on file
+				- file1 -nt file2: file1 is newer than file2
+				- file1 -ot file2: file1 is older than file2
+		- loops
+			- end loops with "done"
+			- for in
+				- ex: for script in *.sh; do
+			- for loop
+				- ex: for (i=0; i < $count; i++); do
+			- while loop
+				- ex: while read line; do
+		- arrays and arithmetic
+			- all bash variables are string valued, but arithmetic depends on use
+				- ex: a=1
+					  b=$((2))
+					  c=$a+$b
+					  d=$(($a+$b)) # $d=4 while $c="1+2"
+			- literal arrays delimited by ()
+				- ex: arr=(aa 'bb cc' dd)
+			- use ${array_name[subscript]} to access individual elements
+				- ex: ${#array_name[*]}
+				- must use {} when calling arrays due to bash parsing
+	- regular expressions
+		- matches single given text string to a single given pattern
+		- entire search patter must match contiguous section of the search text
+		- special constructs can do different things to searches
+			-ex:  I am the (walrus|egg man)\ matches with either "I am the walrus" or "I am the egg man"
+		- zero width assertions
+			- signified by being started with ^ and ending with $
+			- ex: ^\d{5}$ ---> must be exactly 5 digit match
+		- captures
+			- when a match succeeds, every set of parentheses becomes a capture group
+			- if a group is matched more than once, only the contents of the last match are returned
+	- scripting best practices
+		- when run with inappropriate arguments, scripts should print a usage message and exit
+		- validate inputs and sanity-check derived values
+		- return an appropriate exit code (zero for success and nonzero for failure)
+		- use appropriate naming conventions for variables, scripts and routines
+		- use sudo to implement appropriate access control policies
+		- with bash, use -x to echo commands before they are executed and -n to check commands for syntax without executing them
+
+chapter 3
+	- bootstrapping: standard term for starting up a computer
+		- when a computer is turned on, it first executes a boot code that is stored in ROM
+		- boot process steps
+			- reading of the boot loader from the MBR
+			- loading and initialization of the kernel
+			- device detection and configuration
+			- creation of kernel processes
+			- administrator intervention
+			- execution of system startup scripts
+		- kernel initialization
+			- the kernel is a program itself and the first task in boot is to get the program into memory
+			- the pathname of kernel is vendor specific 
+				- usually /unix or /vmunix
+				- kernel is usually some variation of /boot/vmlinuz in linux systems
+			- kernel determines how much RAM is available and sets some aside for itself
+		- init kernel process
+			- kernal initializes various process at start
+			- init is a full-fledged user process 
+			- init handles basic operations like login
+		- operator intervention
+			- a command-line flag passed to init notifies of recovery mode
+			- if the correct password is entered a root shell is spawned
+			- editing config files
+				- need to remount in read/write mode
+					ex: #mount -o rw,remount /
+		-boot process completion
+			- system daemons, such as DNS and SMTP servers are accepting and servicing connections
+			- init continues to perform important role
+				- init defines single-user and serveral network-enabled "run levels"
+				- determines which of the system's resources are enabled
+	- booting PCs
+		- initial boot code typically called BIOS (basic input/output system)
+		- PC has seperate bios for the machine, video card, and SCSI card if the system has one, and sometimes other components
+	- GRUB: grand unified boot loader
+	- booting to single-user mode
+		- at GRUB splash screen, highlight the desired kernel and press 'a' to append to the boot options
+		- to boot into single-user mode add the single flag to the end of the existing kernel options
+			ex: grub append> ro root=LABEL=/ rhgb quiet single
+	- working with startup scripts
+		- scripts located in /etc/init.d
+		- links to scripts made in directories etc/rc0.d, etc/rc1.d
+		- tasks often performed in the startp scripts 
+			- setting name of comp
+			- setting time zone
+			- check disks
+			- mounting the system's disks
+			- removing old files from the /tmp directory
+			- configuring network interfaces
+			- starting up daemons and network services
+		- init and its run levels
+			- init defines at least seven run levels that represent a particular complement of services
+				- level 0: system is completely shut down
+				- level 1 and S represent single-user mode
+				- levels 2 through 5 include support for networking
+				- level 6 is a reboot level
+			- /etc/inittab tells init what to do at each run level
+		- most services understand the arguments start, stop, and restart
+		- startup scripts can differ with different versions types of linux
+	- rebooting and shutting down
+		-shutdown
+			- safest, most considerate and thorough way to initiate a halt or reboot
+			- can have countdown and message before shutdown
+			- can specify halt, single-user mode, or reboot 
+			- can specify check disk (fsck)
+		- halt and rebot
+			- halt performs te essential duties to require system sutdown
+			- called by shutdown -h 
+			- halt 
+				- logs the shutdown
+				- kills nonessential processes
+				- executes sync system call
+				- waits for filesystem 
+				- halts the kernel
+			- reboot
+				- identical to halt but reboots machine
+				- called by shutdown -r
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
