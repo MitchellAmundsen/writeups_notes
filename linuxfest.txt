@@ -1,0 +1,33 @@
+
+-webserver security evaluating risks
+	-take inventory of network
+		-nmap
+		-find hidden computers or devices
+	-what to secure
+		-evaluate your needs
+		-phpmyadmin
+		-apache
+		-sql
+		-each application introduces potential attacks
+	-least privledge
+		-SELinux - security enhanced linux
+			-enforces concept of least priviledge
+			-mandatory access control
+			-reduces potential damage
+		-users
+		-software
+
+-python's GIL
+	-reference counting
+		-once reference count goes to 0 the memory can be reallocated
+		-sys.getrefcount(variable)
+			-gets number of references
+			-references the variable itself
+		-threading causes incorrect reference count
+		-threading makes ref count never hit 0
+	-gil introduced
+		-interpreter_lock = 0
+		-only one lock so no deadlocking
+	-sharing the gil in i/o bound code
+		-PY_BEGIN_ALLOW_THREADS
+		-i/o bound processes should be priotritzed over cpu bound
