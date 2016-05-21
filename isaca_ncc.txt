@@ -1,0 +1,12 @@
+
+reference: beneaththewaves.net
+
+- burp suite
+- sqlmap
+	- free/open sourse tool for exploiting SQL injection vulns
+	- allows reading from and writing to the database depending on vuln app
+	- may allow "breaking out" to server's operating system depending on DB 
+- hashcat
+	- hash cracker
+	- supports most commonly used hash formats
+	- john ripper is slower open source alternative

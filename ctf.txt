@@ -133,6 +133,7 @@
 -deja vu 
 	-client side verification is exploitable
 	-always verify even if you think you have
+
 	
 
 
