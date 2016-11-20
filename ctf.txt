@@ -134,7 +134,13 @@
 	-client side verification is exploitable
 	-always verify even if you think you have
 
+- ELF
+	- executable and linkable format (formerly known as extensible linking format)
+	- common file format for exectuables, object code, shared libraries and core dumps
+	- accepted binary file format for unix-like systems and adopted by many operating systems
+	- not bound to any particular processor or architecture
 	
+
 
 
 

@@ -1,0 +1,73 @@
+
+
+NoSQL
+	- 'not only structured query language'
+	- non-relational so no joins
+	- has semi-structures fields and values stored, but doesn't require 
+	- instead of rejecting data on entry relies on application to handle exceptions
+	- more scalable
+	- less functional
+	- data structures
+		- key-value
+		- column/tabular
+			- three elements 
+				- unique name
+				- value of the column
+				- timestamp
+			- json-like example
+				{
+				    street: {name: "street", value: "1234 x street", timestamp: 123456789},
+				    city: {name: "city", value: "san francisco", timestamp: 123456789},
+				    zip: {name: "zip", value: "94107", timestamp: 123456789},
+				}
+		- graph
+		- document
+			- assume documents encode data in some format
+			- XML, JSON, YAML, BSON
+			- organization
+				- collections
+				- tags
+				- non-visible metadata
+				- directory hierarchies
+	- most lack true ACID transactions
+		- atomicity (all or nothing)
+		- consistency (one valid state to another, accuracy is held at beginning and end)
+		- isolation (isolate what happens in transactions from what is being seen)
+		- durability (once a transaction is commited it will remain so even in evenr of power loss creash or error)
+
+Cassandra
+	- hybrid key-value and tabular DBMS
+	- scalability and availability
+		- all nodes play identical role
+		- no master node
+		- no single point of failure
+	- CQL (casandra query language) an SQL like language that helps the transisition form relational
+
+LevelDB
+	- key-value store
+	- uses
+		- used by a broswer to store a chache of recently accessed web pages
+		- an OS to store a list of installed packages
+		- application to store user preference settings
+	- similar to SQLite
+
+Realm
+	- mobile database similar to SQLite
+	- paired with realm mobile platform to automatically sync data
+
+Filetagging
+	- windows
+		- add a tag to file
+		- Tags: 'tag name'
+		- media files
+		- office 
+	
+UWP
+	- helps develop application for windows 10 and windows 10 mobile 
+	- supports C++, C#, VB.NET, XAML
+	- extension of Windows runtme introduced in windows 8 and windows server 2012
+	
+
+
+
+
