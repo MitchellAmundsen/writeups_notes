@@ -46,3 +46,24 @@ December 4th 2016
 			- improve data quality with consistency between data
 
 	TLDR: Data warehouses are relational databases that are designed for query and analysis instead of transactions and processing. Simple schema like the star schema are used for faster queries with less joins.
+
+December 6th 2016
+
+	PAE (Physical Address Extension)
+		- sometimes referred to as page address extension
+		- memory management system for 32-bit computer
+		- page table hierachy 
+			- table entries of 64 bits each
+			- allow CPUs to access physical address space larger than 4GB
+			- 4 GB the limit on 32-bit systems
+		- used by most OSs
+
+	LXLE Linux
+		- ubuntu/lubuntu based
+		- uses LXDE (lightweight x11 desktop environment)
+		- lightweight distribution
+		- focus on visuals
+		- works well with older hardware in particular
+		- released in 2013
+
+	TLDR: Client wanted LXLE distribution of linux since her laptop was old and weak. She couldn't use a updated version since it required PAE and her laptop processor was actually that old. PAE allows 32-bit computers to use more memory addresses than available to them.
