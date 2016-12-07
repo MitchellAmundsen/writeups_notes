@@ -1,0 +1,48 @@
+
+December 4th 2016
+
+	Data Warehouse
+		- characteristics
+			- subject oriented: designed to help analyze data
+			- integrated: resolve problems such as inconsistency and name conflicts 
+			- nonvolatile: data should not change once entered
+			- time variant: need large amount of data, not archived after time
+		- differences from OLTP (relational)
+			- workload 
+				- designed to accomodate ad hoc queries
+				- OLTP systems support predefined operations in contrast
+			- data modification
+				- updated on regular basis in bulk
+				- OLTP has end users routinely changing data
+			- schema designe
+				- denormalized or star schema to optimize performance
+				- OLTP normalized for update/insert/delete and consistency
+			- typical operations
+				- scans thousands or millions of rows
+				- OLTP usually access limited records
+			- historical data
+				- many months or years of data
+				- OLTP only stores data usually from a short period after
+			- has many indexes
+			- has some joins
+			- has denormalized dbms
+			- common derived data and aggregates
+		- architecture
+			- basic
+				- meta dat
+		- types
+			- data mart: simple form focuses on single object (such as sale or marketing)
+			- OLAP
+				- low volume of transactions
+				- complex queries and aggregations
+				- store aggregated historical data
+			- OLTP
+				- large number of transactions
+				- short update insert delete transactions
+		- benefit
+			- integrate data from multiple sources into single DB
+			- mitigate isolation level lock in contentious transaction
+			- maintain data history
+			- improve data quality with consistency between data
+
+	TLDR: Data warehouses are relational databases that are designed for query and analysis instead of transactions and processing. Simple schema like the star schema are used for faster queries with less joins.
