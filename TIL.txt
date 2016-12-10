@@ -47,3 +47,71 @@ December 4th 2016
 
 	TLDR: Data warehouses are relational databases that are designed for query and analysis instead of transactions and processing. Simple schema like the star schema are used for faster queries with less joins.
 
+
+December 6th 2016
+
+	PAE (Physical Address Extension)
+		- sometimes referred to as page address extension
+		- memory management system for 32-bit computer
+		- page table hierachy 
+			- table entries of 64 bits each
+			- allow CPUs to access physical address space larger than 4GB
+			- 4 GB the limit on 32-bit systems
+		- used by most OSs
+
+	LXLE Linux
+		- ubuntu/lubuntu based
+		- uses LXDE (lightweight x11 desktop environment)
+		- lightweight distribution
+		- focus on visuals
+		- works well with older hardware in particular
+		- released in 2013
+
+	TLDR: Client wanted LXLE distribution of linux since her laptop was old and weak. She couldn't use a updated version since it required PAE and her laptop processor was actually that old. PAE allows 32-bit computers to use more memory addresses than available to them.
+
+
+December 8th 2016
+	
+	Conficker
+
+	Mamba Trojan
+
+December 9th 2016
+
+	Proxy
+		- server that acts as intermediary for requests
+		- proxy evaluates request to simplify and control i/o
+		- types
+			- proxy server: gateway or tunnel that passes unmodified requests and responses
+			- forward proxy: internet facing proxy used to rretrieve from a wide range of sources, anonymizing the client that is requesting
+			- reverse proxy: opposite of forward proxy and anonymizes servers
+
+	Botnet
+		- network of internet connected computers acting from a same C&C
+		- used for DDoS and spam
+		- components
+			- C&C
+			- Zombie computer: computer taken over by malware and used for malicious tasks while user is unaware
+
+	Command and Control
+		- servers and other infastructure used to control malware
+		- botnets in particular, but can also control trojan etc
+		- types
+			- client-server model: individual client bots request services and resources from centralized C&C server
+			- peer-to-peer: command and control embedded into botnet and commands sent to other bots with public key encryption
+		- systems
+			- domains
+				- a specifically designed webpage or domains which lists command and controls
+				- simple code and easily updated
+				- easily siezed and stopped
+			- IRC
+				- simple in construction
+				- low bandwidth communication methods 
+			- P2P
+
+	Fast Flux
+		- constant changing network of compromised hosts acting as proxies
+		- used by botnets to hide phishing and malware delivery sites
+		- also refers to p2p, load balancing, and proxy redirection
+		- numerous IP addresses associated with domain name and swapped at high frequency
+
