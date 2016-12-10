@@ -46,3 +46,4 @@ December 4th 2016
 			- improve data quality with consistency between data
 
 	TLDR: Data warehouses are relational databases that are designed for query and analysis instead of transactions and processing. Simple schema like the star schema are used for faster queries with less joins.
+
