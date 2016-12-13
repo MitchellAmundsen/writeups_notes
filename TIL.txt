@@ -73,8 +73,29 @@ December 6th 2016
 December 8th 2016
 	
 	Conficker
+		- windows OS worm
+		- 5 variants of conficker A B C D E
+		- infection
+			- infected computer uses buffer overflow to execute shell code
+			- uses shell to connect to source over HTTP
+			- downloads DLL virus and attaches to svchost.exe, services.exe, or windows explorer.exe
+			- registry key added for persistance
+		- symptoms
+			- account lockout policies reset automatically
+			- certain windows services disabled
+			- domain controllers respond slowly to client requests
+			- congestion on LAN
+			- AV websites or windows update become inaccessible
+			- user accounts locked out
 
 	Mamba Trojan
+		- full disk encryption ransomware
+		- mamba installs itself as windows service with name DefragmentationService
+		- has LocalSystem privledges which is invisible and has almsot complete control
+		- installs DiskCryptor in background
+		- encryption takes tens of minutes to several hours
+		- computer doesn't reboot automatically after encryption
+		- plaintext password can be found in log_file.txt
 
 December 9th 2016
 
@@ -115,3 +136,23 @@ December 9th 2016
 		- also refers to p2p, load balancing, and proxy redirection
 		- numerous IP addresses associated with domain name and swapped at high frequency
 
+December 12th 2016
+
+	Fuzzing
+		- automatic bug finding
+		- fuzzer: program that injects automatically semi-random data into a prgram/stack
+		- use random data or static fuzzing vectors (known dangerous values)
+		- types of fuzzing
+			- application fuzzing
+				- UI testing
+				- command line options
+				- import/export
+			- protocol fuzzing
+				- acts a proxy and modifies requests
+				- sends forged packets
+			- file format fuzzing
+				- multiple bad files and opens sequentially
+				- parser layer: file format constraints, structure, conventions, field sizes
+				- codec/application later: lower level
+
+	
