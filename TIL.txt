@@ -45,6 +45,7 @@ December 4th 2016
 			- maintain data history
 			- improve data quality with consistency between data
 
+
 	TLDR: Data warehouses are relational databases that are designed for query and analysis instead of transactions and processing. Simple schema like the star schema are used for faster queries with less joins.
 
 
@@ -66,6 +67,7 @@ December 6th 2016
 		- focus on visuals
 		- works well with older hardware in particular
 		- released in 2013
+
 
 	TLDR: Client wanted LXLE distribution of linux since her laptop was old and weak. She couldn't use a updated version since it required PAE and her laptop processor was actually that old. PAE allows 32-bit computers to use more memory addresses than available to them.
 
@@ -96,6 +98,9 @@ December 8th 2016
 		- encryption takes tens of minutes to several hours
 		- computer doesn't reboot automatically after encryption
 		- plaintext password can be found in log_file.txt
+
+
+	TLDR: Conficker is a Windows worm that uses bufferoverflow to get shell access and control over a computer. It has many variants and it's symptoms involve losing Windows services. Mamba trojan is a full disk encryptor ransomware that uses DiskCryptor to encrypt parts of the hard drive. 
 
 December 9th 2016
 
@@ -136,6 +141,9 @@ December 9th 2016
 		- also refers to p2p, load balancing, and proxy redirection
 		- numerous IP addresses associated with domain name and swapped at high frequency
 
+
+	TLDR: Botnet is a number of compromised systems used to attack another system through DDoS or spam. They use a command and control server for direction, which may use websites, IRC, or peer-to-peer as a medium of communication. Fast flux is used by C&C to avoid getting the single controller shutdown. Fast flux uses a number of IP addresses associated with a single domain name, and rapidly swaps them out so there is no single point of failure. Proxy is a server that acts as an intermediary for requests, helping evaluate incoming requests and hiding identity of outgoing requests. 
+
 December 12th 2016
 
 	Fuzzing
@@ -155,4 +163,15 @@ December 12th 2016
 				- parser layer: file format constraints, structure, conventions, field sizes
 				- codec/application later: lower level
 
+
+	TLDR: Fuzzing is automatic testing of a program or system for bugs. It uses known problem numbers as well as RNG to test inputs for bufferoverflow or logic errors. 
+
+December 14th 2016
 	
+	JTAG (Joing Test Action Group)
+		- association formed for method on verifying designs and testing circuit boards
+		- requires dedicated debug port on serial communications interface
+		- interface connects to an on-chip test access port (TAP)
+		- used for debugging and storing firmware
+
+
