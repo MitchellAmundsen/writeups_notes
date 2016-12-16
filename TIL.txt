@@ -49,6 +49,7 @@ December 4th 2016
 	TLDR: Data warehouses are relational databases that are designed for query and analysis instead of transactions and processing. Simple schema like the star schema are used for faster queries with less joins.
 
 
+
 December 6th 2016
 
 	PAE (Physical Address Extension)
@@ -70,6 +71,7 @@ December 6th 2016
 
 
 	TLDR: Client wanted LXLE distribution of linux since her laptop was old and weak. She couldn't use a updated version since it required PAE and her laptop processor was actually that old. PAE allows 32-bit computers to use more memory addresses than available to them.
+
 
 
 December 8th 2016
@@ -101,6 +103,7 @@ December 8th 2016
 
 
 	TLDR: Conficker is a Windows worm that uses bufferoverflow to get shell access and control over a computer. It has many variants and it's symptoms involve losing Windows services. Mamba trojan is a full disk encryptor ransomware that uses DiskCryptor to encrypt parts of the hard drive. 
+
 
 December 9th 2016
 
@@ -144,6 +147,7 @@ December 9th 2016
 
 	TLDR: Botnet is a number of compromised systems used to attack another system through DDoS or spam. They use a command and control server for direction, which may use websites, IRC, or peer-to-peer as a medium of communication. Fast flux is used by C&C to avoid getting the single controller shutdown. Fast flux uses a number of IP addresses associated with a single domain name, and rapidly swaps them out so there is no single point of failure. Proxy is a server that acts as an intermediary for requests, helping evaluate incoming requests and hiding identity of outgoing requests. 
 
+
 December 12th 2016
 
 	Fuzzing
@@ -166,6 +170,7 @@ December 12th 2016
 
 	TLDR: Fuzzing is automatic testing of a program or system for bugs. It uses known problem numbers as well as RNG to test inputs for bufferoverflow or logic errors. 
 
+
 December 14th 2016
 	
 	JTAG (Joing Test Action Group)
@@ -173,5 +178,46 @@ December 14th 2016
 		- requires dedicated debug port on serial communications interface
 		- interface connects to an on-chip test access port (TAP)
 		- used for debugging and storing firmware
+
+
+	TLDR: JTAG is a group that decides standards for testing, most well known for their role in debug ports
+
+
+December 15th 2016
+
+	Same-Origin Policy
+		- web browser only allows scripts to access data found in second web page inly if second page if from same origin
+		- similarity combination
+			- same protocol
+			- same host
+			- same port
+		- reason
+			- malicious site could request data from site
+			- site sees cookies of client's and returns client's data
+			- malicious site has client's information
+
+
+	TLDR: Same-origin policy gives restrictions on which alternatives pages an initial web page can acces, keeping malicious pages from using client's cookies to get their information.
+
+
+December 16th 2016
+	
+	XSS
+		- used to bypass same-origin policy
+		- allows attackers to inject client-side scripts into web pages
+		- types
+			- non-persistent
+				- http query parameters used by server-side scripts to display results without sanitization
+				- malicious code returned to client side as part of HTML response
+				- ex: script tag put into input or search function and returned back to client 
+				- requires social engineering for user to click on link with malicious code
+				- results in cookie and data theft 
+			- persistent
+				- script provided by attacker saved by server and displayed by normal pages
+				- ex: forum post of XSS HTML
+				- no need for social engineering
+
+
+	TLDR: XSS attacks come in to forms, with the goal of running malicious scripts on the client side to access stored browser information. Non-persistent requires malicious code to be input by the victim, where persistent XSS runs for all users on the compromised site.
 
 
