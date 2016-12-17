@@ -221,3 +221,12 @@ December 16th 2016
 	TLDR: XSS attacks come in to forms, with the goal of running malicious scripts on the client side to access stored browser information. Non-persistent requires malicious code to be input by the victim, where persistent XSS runs for all users on the compromised site.
 
 
+December 17th 2016
+
+	IRC (Internet Relay Chat)
+		- application layer protocol
+		- client/server network model
+		- uses TCP and TLS
+		- ran on port 6667
+
+	
