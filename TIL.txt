@@ -229,4 +229,48 @@ December 17th 2016
 		- uses TCP and TLS
 		- ran on port 6667
 
+December 20th 2016
 	
+	Polymorphism
+		- differences in classes that extend from each other
+		- example
+			- food class has certain attributes and methods
+			- burger class can override those and make it's own
+			- same with pasta class
+			- number of classes that are all food but are different
+
+	Abstract Method and Class
+		- method
+			- method declared without implementation
+			- followed by semicolon
+		- class
+			- class that contains abstract methods
+			- provides subclass with methods for implementation
+
+	Method Overloading
+		- two or more methods in one class have the same paramaters
+		- compile time concept
+		- ex: 142/3 assignments where constructor was different given parameters
+
+	Method Overriding
+		- two methods, one parent and one child method
+		- overriding makes specific implementation of parent method
+		- polymorphism applies to this
+		- run-time concept
+
+	Join Types
+		- inner join
+			- join based on record that match between tables
+			- middle area in venn diagram
+		- left join
+			- select all record from 1st table along with matching records
+			- first table plus middle table
+		- right join
+			- select all records from second table along with matching records
+			- right table and middle
+		- full
+			- select all records
+
+
+
+

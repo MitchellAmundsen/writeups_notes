@@ -1,0 +1,35 @@
+categorization
+	peer-to-peer network
+		- both provide and consume information
+		- easy to implement (windows has peer to peer services)
+		- problems
+			- not very scalable
+			- lack centralized control
+			- no centralized place to store information
+
+	client-server network
+		- server provides network resources
+		- client consumes network services
+		- server operating systems
+			- linux
+			- windows server
+			- red hat
+			- vmware
+		- benefits
+			- highly scalable
+			- easier to support with centralized services
+
+	local area network LAN
+		- networking geographically (close by)
+
+	wide area network WAN
+		- connected via internet 
+		- far away geographically
+
+	baseband
+		- one signal across network medium
+		- only one at a time takes whole traffic
+
+	broadband
+		- divides the medium into multiple channels
+		- 
