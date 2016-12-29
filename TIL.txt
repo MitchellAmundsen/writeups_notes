@@ -306,6 +306,19 @@ December 28th 2016
 	TLDR: Cron is a program that allows a user to execute commands on a time/date basis. It is a daemon that uses the crontab to find date/time to run.
 
 
+December 29th 2016
 
-
+	Xeon
+		- brand of x86 processors created by intel
+		- targeted at non-consumer workstations, servers, and embedded systems
+		- pros
+			- 15-30MB of L3 cache (close to double counterparts)
+			- more stable/supports ECC RAM (error checking and correction)
+			- up to 12 cores
+			- more longevity
+			- hyperthreading
+		- cons
+			- no overclocking
+			- lesser ghz per dollar
+			- no onboard graphics card
 
