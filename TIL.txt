@@ -229,6 +229,10 @@ December 17th 2016
 		- uses TCP and TLS
 		- ran on port 6667
 
+
+	TLDR: IRC is a protocol that allows for basic communication over TCP and TLS.
+
+
 	Metasploit
 		- used for penetration testing and IDS signature development
 		- framework steps
@@ -255,8 +259,95 @@ December 18th 2016
 		- least significant bit insertion
 		
 
+	TLDR: Steganography is the art of concealing messages in image or audio files. The messages can be encrypted with a password and often use least significant bit insertion to store.
 
 
-
-
+December 20th 2016
 	
+	Polymorphism
+		- differences in classes that extend from each other
+		- example
+			- food class has certain attributes and methods
+			- burger class can override those and make it's own
+			- same with pasta class
+			- number of classes that are all food but are different
+
+	Abstract Method and Class
+		- method
+			- method declared without implementation
+			- followed by semicolon
+		- class
+			- class that contains abstract methods
+			- provides subclass with methods for implementation
+
+	Method Overloading
+		- two or more methods in one class have the same paramaters
+		- compile time concept
+		- ex: 142/3 assignments where constructor was different given parameters
+
+	Method Overriding
+		- two methods, one parent and one child method
+		- overriding makes specific implementation of parent method
+		- polymorphism applies to this
+		- run-time concept
+
+	Join Types
+		- inner join
+			- join based on record that match between tables
+			- middle area in venn diagram
+		- left join
+			- select all record from 1st table along with matching records
+			- first table plus middle table
+		- right join
+			- select all records from second table along with matching records
+			- right table and middle
+		- full
+			- select all records
+
+
+	TLDR: The following have to do with object oriented programming and inheritence. Polymorphism explains the differences in classes that extend from the same parent object. Abstract methods are methods that are declared, but do not have implementation, often used in a parent class to be implemented in child class. Method Overloading is having multiple methods in a class with the same name, but have different arguments and implementations. Method Overriding is when a child class will override a method in the parent class with it's own version/implementation. 
+
+	Joins are categorized by the tables in which their data contains. Inner joins have common data, Left joins contain the first table and innter data, Right joins contain information from the second table and inner table, and full joins have data from all the tables.
+
+
+December 28th 2016
+
+	Cron
+		- a unix program that executes commands based on time/date
+		- crond: daemon/dormant process that waits for specified time
+		- crontabs: config file with cron jobs
+		- cron daemon should begin on startup 
+		- vixie cron
+			- automatically reloads crond after file changed
+			- each user has own crontab
+		- edit crontab
+			- crontab -e [username]
+			- vim /etc/crontab
+		- form
+			- minute hour dayofmonth month dayofweek user cmd
+			- just 1 means first (minute/hour/day)
+			- /1 means every (minute/hour/day)
+			- ex:
+				- 01 * * * * root echo "This command is run at one min past every hour"
+				- /1 * * * * root echo "This command is run every minute"
+
+
+	TLDR: Cron is a program that allows a user to execute commands on a time/date basis. It is a daemon that uses the crontab to find date/time to run.
+
+
+December 29th 2016
+
+	Xeon
+		- brand of x86 processors created by intel
+		- targeted at non-consumer workstations, servers, and embedded systems
+		- pros
+			- 15-30MB of L3 cache (close to double counterparts)
+			- more stable/supports ECC RAM (error checking and correction)
+			- up to 12 cores
+			- more longevity
+			- hyperthreading
+		- cons
+			- no overclocking
+			- lesser ghz per dollar
+			- no onboard graphics card
+
