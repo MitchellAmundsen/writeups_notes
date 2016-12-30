@@ -229,4 +229,34 @@ December 17th 2016
 		- uses TCP and TLS
 		- ran on port 6667
 
+	Metasploit
+		- used for penetration testing and IDS signature development
+		- framework steps
+			- choose and configure exploit (900 different windows, linux, mac exploits)
+			- choosing and configuring a payload/result (ex: remote shell)
+			- choose encoding technique so that IPS (intrusion prevention system) ignores payload
+			- execute exploit
+		- payloads
+			- 438 payloads
+			- command shell
+			- meterpreter: enables user to control screen of device using VNC
+			- dynamic payloads: unique payloads to evade AV
+
+
+	TLDR: IRC is a protcol for text based internet chat. Metasploit is a linux/windows pentesting application that creates exploit kits based on a chosen exploit and payload.
+
+
+December 18th 2016
+
+	Steganography
+		- concealing a message/file within another message/file
+		- commonly used in image or audio files
+		- encrypts message with password
+		- least significant bit insertion
+		
+
+
+
+
+
 	
