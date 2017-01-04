@@ -351,3 +351,46 @@ December 29th 2016
 			- lesser ghz per dollar
 			- no onboard graphics card
 
+	Positional vs. Keyword Arguments
+		- keyword argument
+			- argument preceded by identifier
+			- def(keyword=5) when called
+			- passes in already defined variable
+		- positional argument
+			- argument based on position
+			- first argument passed in is first parameter
+			- def(5)
+
+			
+January 3rd 2017
+
+	Buffer Overflow
+		-
+
+	Data Buffer
+		- region of physical memory that stores data while it is being moved
+		- typically used to store data from input/output device
+		- may be used to store data beween processes in a computer
+		- used when difference in rate data is received and sent
+		- implementation
+			- physical memory location or virtual pointing at physical 
+			- implemented in software
+			- often use RAM for speed
+		- benefit
+			- allow synchronous operations to complete quickly instead of waiting for hardware
+			- allows application to continue processing while kernel completes the disk operation in background
+			- application reading and writing blocks that do not correspond to block size of subsystem
+
+	Synchronous Operation
+		- blocks a process until operation completes
+		- wait until task if finished to move on
+
+	Asynchronous
+		- Asynchronous operation is non-blocking and initiates operation
+		- move on to another task before first is done finishing
+
+	Thread
+		- series of commands/block of code
+		- operating system can manage multiple threads at a time
+		- multithreading
+			- single core executing multiple processes or threads concurrently
