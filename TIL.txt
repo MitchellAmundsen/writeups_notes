@@ -364,9 +364,6 @@ December 29th 2016
 			
 January 3rd 2017
 
-	Buffer Overflow
-		-
-
 	Data Buffer
 		- region of physical memory that stores data while it is being moved
 		- typically used to store data from input/output device
@@ -394,3 +391,34 @@ January 3rd 2017
 		- operating system can manage multiple threads at a time
 		- multithreading
 			- single core executing multiple processes or threads concurrently
+
+
+January 4th 2016
+
+	Buffer Overflow
+	- when a program attempts to store more data than it can hold in a buffer or past a buffer
+	- buffer (in this case): sequential memory allocated to contain anything (integer, characters)
+	- exploit
+		- attacker sends data to undersized stack buffer
+		- information on call stack is overwritten, including return pointer
+		- return of funaction transfers control to malicious code contained in attacker original data
+	- cause
+		- bound checking 
+		- memory manipulation functions (C and C++ usually)
+	- typical occurs in code that
+		- relies on external data to control its behavior
+		- depends on properties of the data that are enforced outside immediate scope
+		- too complex for programmer to predict behavior
+	- web applications
+		- can be present in web servers or application server products
+		- vulnerabilities in server products can be known and used in multiple uses
+		- can be found in custom code as well
+	- consequences
+		- availability: generally lead to crashes or infinite loops
+		- access control: execute arbitrary code
+		- other: arbitrary code can do anything theoretically
+	- interpreted languages are safe (java, python)
+	- C, C++, Fortan, Assembly usually platforms
+
+
+
