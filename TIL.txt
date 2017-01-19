@@ -393,7 +393,7 @@ January 3rd 2017
 			- single core executing multiple processes or threads concurrently
 
 
-January 4th 2016
+January 4th 2017
 
 	Buffer Overflow
 	- when a program attempts to store more data than it can hold in a buffer or past a buffer
@@ -419,6 +419,47 @@ January 4th 2016
 		- other: arbitrary code can do anything theoretically
 	- interpreted languages are safe (java, python)
 	- C, C++, Fortan, Assembly usually platforms
+
+
+January 6th 2017
+
+	NIC (Network Interface Card)
+
+	Suricata
+
+
+January 18th 2017
+	
+	DNS (Domain Name Service)
+		- root DNS
+			- main DNS authority server
+			- only 13 in the world named A-M
+			- sell ip adresses to DNS providers
+		- lower level DNS servers
+			- connect to root servers
+			- google, ISPs, UW all have own external DNS server
+		- client/server
+			- web browser functions as client
+			- DNS server receives request
+			- if not in DB it acts as a temp DNS client
+		- private DNS server
+			- internal DNS can be used to route to devices on the network
+			- LAN devices can communicate to each other through the internal DNS server
+			- keeps private endpoints from being publicly accessible
+
+	Wabbit
+		- self replicating computer program
+		- does not infect host programs or documents
+		- does not propogate over network capabilities
+		- replicates itself on local computer
+		- fork bomb
+			- a program that self replicates until processor slows down
+			- can occur by accident
+			- DOS attack
+
+	
+
+
 
 
 
