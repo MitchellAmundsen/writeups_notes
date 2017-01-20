@@ -430,7 +430,7 @@ January 6th 2017
 
 January 18th 2017
 	
-	DNS (Domain Name Service)
+	DNS (Domain Name System)
 		- root DNS
 			- main DNS authority server
 			- only 13 in the world named A-M
@@ -457,6 +457,39 @@ January 18th 2017
 			- can occur by accident
 			- DOS attack
 
+January 197th 2017
+
+	DNS cont
+		- query (broswer, system, recursive, root, name)
+			- query starts off with broswer cache
+			- then moves to system resolver that checks static system files
+			- passed to recursive DNS server 
+				- checks cache
+				- checks if it has address of name servers
+				- send query to most specific domain component (example.com or .com server)
+			- goes to root server if it has no leads
+				- root server knows address of all name/authoritative servers
+				- sends recursive server referral to name server (.com server)
+		- types of DNS servers
+			- authoritative
+				- only concerns itself with answering queries for zone it's responsible for
+				- responds quickly to queries in its zone
+				- never acts as client (unlike recursive)
+				- no cache since it never queries
+			- caching/recursive
+				- acts as client
+				- access to entire range of public DNS
+				- handles DNS resolution
+				- responds to client with DNS query answer or error
+				- maintains cache
+			- forwarding
+				- acts as intermediary between client and recursive
+				- sends the recursive request
+				- holds local cache at closer network location
+				- can ensure internal requests are server by private servers
+
+
+ 
 	
 
 
