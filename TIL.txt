@@ -492,10 +492,42 @@ January 22nd 2017
 		- windows 2000 does not have domain controller as replaced by active directory
 
 
-January 24th 2017
+January 31st 2017
+	
+	TAP vs. SPAN
+		- TAP (test access point)
+			- passive splitting mechanism between device and network
+			- send and receive data simultaneously
+			- capture everything on wire
+			- pro
+				- eliminates risk of dropping packets
+				- monitoring device receives all packets including physical errors
+				- provides full visibility
+			- cons
+				- analysis device may need dual-receive capture interface
+				- cannot monitor intra-switch traffic
+		- SPAN (switch port analyzer)
+			- hardware and media errors dropped
+			- RX (receive) and TX (transmit) copied in on TX signal
+			- if use exceeds link compacity packets are dropped
+			- pro
+				- low cost
+				- captures intra-switch traffic
+				- remotely configurable
+			- cons
+				- cannot handle heavily utilized links without dropping packets
+				- filters out physical layer errors
+				- can change timing of frame interaction
+				- prioritizes SPAN port data lower than regular port-to-port
 
-	DHCP (Dynamic Host Configuration Protocol)
-		- 
+	Industry Security Products
+		- palo alto (enterprise network monitor)
+		- FireEye (enterprise network monitor)
+		- bitdefender (host install)
+		- pfSense (open source firewall)
+		- symantec (endpoing and network monitoring)
+		- packetsled (inline enterprise monitor)
+
 
 
  

@@ -32,4 +32,15 @@ categorization
 
 	broadband
 		- divides the medium into multiple channels
-		- 
+
+OSI and TCP/IP models
+	- physical layer: cables and bits
+		- physical/electrical stage
+		- conversion between signals
+		- voltages, cable specifications, NIC, pinouts
+	- data link layer: sending MAC address, sending to switch, sending frames
+	- network layer: sending to IP addresses, router
+	- transport layer: provides management, session into packets
+	- session layer: communication and management (dictating who's allowed to talk and when)
+	- presentation layer: encrypting and decrypting, formatting
+	- application layer: allows programs to connect to network
