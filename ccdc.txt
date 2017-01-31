@@ -1,0 +1,83 @@
+
+commands
+	!! - puts the previous commands in command
+	:w !sudo tee % - writing to file without permissions in vi
+	cntr + R - search for last command with given text
+
+
+Mail Server
+	- pop3 and imap for client/server
+	- smtp for server/server
+	- mail storing standards
+		- mbox
+			- pros
+				- traditional in unix, universally supported
+				- text file serves as mail user's mailbox
+				- appending mail is fast
+				- search text inside single mailbox is fast
+			- cons
+				- file locking problems
+				- problems when used with network file systems
+				- format prone to corruption
+		- maildir
+			- each user has new directory (new, cur, tmp)
+			- pro
+				- fast locating, retrieving, deleting
+				- minimal to no file locking
+				- can be used on network file system
+				- immune to mailbox corruption
+			- cons
+				- some filesystems may not handle large number of small files
+				- searching text requires all mail files to be opened
+	- dovecot
+		- open source mail server
+		- imap and pop3
+
+
+Presentations
+	Acceptable Use Policy
+		- contract that employees sign that details what they can or cannot use
+		- pushes responsibility to users
+		- file server, web servers, other systems
+		- clear reprecussions and guidelines
+		- regular auditing and updating
+	VPM
+		- extends private network across public network
+		- tunnels protols and encryption
+		- protocols
+			- PPTP (point to point tunneling protocol)
+				- no encryption or auth
+			- L2TP
+				- layer two tunneling protocol
+				- relies on IPsec to secure packets
+			- SSL VPN
+			- SSTP
+			- SSH VPN
+	Audit
+		- selective logging of activities
+		- WAL: write ahead logging (write event before trx happens)
+		- info to audit
+			- logons
+			- configuration
+			- audit configuration
+			- schema modification
+			- data modification
+			- data access
+		- types of logging
+			- c2
+				- forces WAL
+				- stops the transaction if logging fails and shuts down server
+				- used to prevent unlogged activities
+		- triggers
+			- logon
+			- DML: data manipulation language
+			- DDL: data definition language
+		- defining suspicious activity
+			- detect SQL injection
+			- detect file inclusion
+			- frequent failed attempt to login
+	Linux ADDS (active directory domain service)
+		- joining a windows domain
+		- get kerberos ticket than join domain
+		- lots of configuration
+		- Samba and PAM config

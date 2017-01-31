@@ -421,13 +421,6 @@ January 4th 2017
 	- C, C++, Fortan, Assembly usually platforms
 
 
-January 6th 2017
-
-	NIC (Network Interface Card)
-
-	Suricata
-
-
 January 18th 2017
 	
 	DNS (Domain Name System)
@@ -457,7 +450,7 @@ January 18th 2017
 			- can occur by accident
 			- DOS attack
 
-January 197th 2017
+January 19th 2017
 
 	DNS cont
 		- query (broswer, system, recursive, root, name)
@@ -487,6 +480,22 @@ January 197th 2017
 				- sends the recursive request
 				- holds local cache at closer network location
 				- can ensure internal requests are server by private servers
+
+
+January 22nd 2017
+
+	Domain Controller
+		- microsoft server that responds to authentication requests
+		- user granted access to number of computers on network
+		- center of windows active directory service
+		- early version of windows and windows NT had single domain controller per domain
+		- windows 2000 does not have domain controller as replaced by active directory
+
+
+January 24th 2017
+
+	DHCP (Dynamic Host Configuration Protocol)
+		- 
 
 
  
