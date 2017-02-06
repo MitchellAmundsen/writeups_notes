@@ -39,7 +39,16 @@ OSI and TCP/IP models
 		- conversion between signals
 		- voltages, cable specifications, NIC, pinouts
 	- data link layer: sending MAC address, sending to switch, sending frames
-	- network layer: sending to IP addresses, router
+		- point to point
+		- sending to specific MAC address
+		- hub (layer 2 device that repeats packets to all devices)
+		- bits to frames
+	- network layer: sending to IP addresses, router, packets
+		- translate logical address (IP) to physical (MAC)
+		- transferring data from through networks
+		- routers assign hardware an IP adress
+		- routers have ip adresses 
+		- router takes packets and routes it to other router
 	- transport layer: provides management, session into packets
 	- session layer: communication and management (dictating who's allowed to talk and when)
 	- presentation layer: encrypting and decrypting, formatting

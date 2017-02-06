@@ -32,6 +32,15 @@ Mail Server
 	- dovecot
 		- open source mail server
 		- imap and pop3
+	- postfix
+		- responsible for sending/receiving smtp
+	- DKIM
+		- domain key identified mail
+		- verifies sender
+	- clamav
+		- scanning daemon for for mailserver
+		0 antivirus
+		
 
 
 Presentations
@@ -81,3 +90,12 @@ Presentations
 		- get kerberos ticket than join domain
 		- lots of configuration
 		- Samba and PAM config
+
+	SQL
+		- prevent sql injection
+			- disable local file inclusion
+			- limit databse access for each user
+			- validate and sanitize inputs
+			- run datases as their own user
+	
+
