@@ -50,6 +50,22 @@ OSI and TCP/IP models
 		- routers have ip adresses 
 		- router takes packets and routes it to other router
 	- transport layer: provides management, session into packets
+		- tcp or udp
+			- tcp receipt
+			- udp no tracking (doesnt care if you got it)
+		- manages and controls packets
+		- udp faster since no verification between packages
+		- negotiated based on protocol
 	- session layer: communication and management (dictating who's allowed to talk and when)
+		- establishes, manages, and terminates connections
+		- handshakes, verification
 	- presentation layer: encrypting and decrypting, formatting
+		- formats packages for application layer
+		- facilitates different formats for different computers
+		- encryption/decryption
 	- application layer: allows programs to connect to network
+		- protocols (ex: smtp, http, ftp)
+		- formats it for human use
+		- indentifies communication partners
+		- syncs communication
+		- determines resources available
