@@ -529,11 +529,62 @@ January 31st 2017
 		- packetsled (inline enterprise monitor)
 
 
+February 7th 2017
 
+	Binary File
+		- file that is non-text
+		- can contain a mix of text and binary
+		- usually a sequence of bytes/8 bits
  
-	
+	Curl
+		- command line tool for transferring data to or from server
+		- supports protocols including
+			- ftp
+			- http
+			- smtp
+			- imap, pop3
+			- many more
+		- number of features (http post, ftp upload, auth, ssl, etc)
+		- powered by lubcurl (application)
 
+	Netcat (nc)
+		- network utility for reading and writing network connection using TCP or UDP
+		- able to port scan, transfer files, port listen
+		- can be used as a proxy
+		- simplest usage
+			- creates tcp connection given host and target port
+			- stdin sent to host
+			- stdout anything sent back
+		- imporved version of telnet 
 
+	IDS
+		- signature detection
+			- alerts on rules or petterns
+			- signatures for malware, scanning activity, attacks, etc
+		- anomaly detection
+			- unusual activity that deviates from statistical averages
+			- ex: server sending out more http activity than usual
+		- open source ids
+			- snort
+				- long product life
+				- community support
+				- administrative front ends
+				- thoroughly proven and tested
+			- suricata
+				- multi-threaded
+				- file extraction
+				- log TLS/SSL certs, http requests, dns requests
+				- many more features
+			- bro
+				- both signature and anomaly based
+				- convert traffic into events
+					- ex: user logon to FTP, connection to a website
+				- policy script converter
+				- very automatable
+				- complicated to setup
+				- can detect patterns other IDS cannot
+				- extensible architecture
+				
 
 
 
