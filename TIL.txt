@@ -584,7 +584,6 @@ February 7th 2017
 				- complicated to setup
 				- can detect patterns other IDS cannot
 				- extensible architecture
-				
 
 
 
