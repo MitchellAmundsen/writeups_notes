@@ -69,3 +69,50 @@ OSI and TCP/IP models
 		- indentifies communication partners
 		- syncs communication
 		- determines resources available
+
+	- tcp/ip model
+		- network interface: combination of physical and datalink layer
+		- internet layer: network layer
+		- transport layer: transport layer
+		- application layer: session + presentation + application layer
+
+Devices and Protocols in relation to OSI
+	- MAC address
+		- media access control address
+		- layer 2 data link
+		- physical address
+	- IP address
+		- layer 3 network layer
+		- logical address matched to physical address
+	- EUI 64
+		- layer 2 data link
+		- ipv6 global unicast
+		- specific to network around the world
+		- data link since it is specific to physical device
+	- frames
+		- layer 2 protocol delivery unit
+		- segment of data 
+	- packet
+		- layer 3 protocol delivery unit
+		- segment of data
+	- switch
+		- layer 2
+		- map to MAC addresses
+	- router
+		- layer 3 
+		- moves data across networks
+		- maps ip addresses to mac addresses
+	- hub
+		- layer 2
+		- passes information to everyone
+		- "dumb" switch
+	- encryption device
+		- layer 6 presentation
+		- format data
+		- device on the wire that encrypts and decrypts
+	- cable/NIC
+		- layer 1 physical
+	- bridge
+		- layer 2
+		- point to point connectivity
+		
