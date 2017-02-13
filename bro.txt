@@ -1,0 +1,12 @@
+
+Bro is an event based IDS and events will trigger certain actions.
+
+event bro_init() - triggered on startup of bro
+event bro_done() - triggered on finish
+
+@load script - loads script
+	-<prefix>/share/bro
+	-<prefix>/share/bro/policy
+	-<prefix>/share/bro/site
+
+
