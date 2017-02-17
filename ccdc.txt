@@ -97,5 +97,11 @@ Presentations
 			- limit databse access for each user
 			- validate and sanitize inputs
 			- run datases as their own user
+
+PXE Boot (Preboot Execution Environment)
+	- client-server environment that boots a software assembly
+	- client requires NIC and protocols (dhcp and tftp)
+	- allows client to skip power > bios > hd/cd
+	
 	
 

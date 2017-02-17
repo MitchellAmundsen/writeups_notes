@@ -9,4 +9,92 @@ event bro_done() - triggered on finish
 	-<prefix>/share/bro/policy
 	-<prefix>/share/bro/site
 
+function: 
+	function emphasize(s: string, p: string &default = "*"): string
+		{
+		return p + s + p;
+		}
 
+	- return type specified after colon
+	- + operator concatenates strings
+	- function prints to stdout
+	- events cannot be nested, functions can
+	- default sets parameters as such when no arguments are passed
+
+variables
+	global x = "Hello"
+	const y = "hola"
+	local z = "sup"
+
+	- constant variables cannot be changed (final)
+	- local variables restricted scope
+
+primitive datatypes
+	- bool, double, int, count, string, pattern (regex)
+	- domain specific types: time, interval, port, addr, subnet
+
+	/one|two|three/ == "two"; #T
+	/one|two|three/ == "ones"; #F
+	/one|two|three/ in "ones"; #T (embedded matching)
+	/[123].*/ == "2 two";  # T
+	/[123].*/ == "4 four"; # F
+
+operators
+	- mostly normal opertors
+	- other operators
+		- inclusion (a in b)
+		- exclusion (a !in b)
+		- size/length (|a|)
+		- absolute value (|a|)
+		- string slicing (a[i:j], a[i:], a[:j])
+
+switch
+
+	local x = 4;
+    switch ( x ) 
+    {
+    case 0:
+        # This block only executes if x is 0.
+        print "case 0";
+        break;
+    case 1, 2, 3:
+        # This block executes if any of the case labels match.
+        print "case 1, 2, 3";
+        break;
+    case 4:
+        print "case 4 and ...";
+        # Block ending in the "fallthrough" also execute subsequent case.
+        fallthrough;
+    case 5:
+        # This block may execute if x is 4 or 5.
+        print "case 5";
+        break;
+    default:
+        # This block executed if no other case matches.
+        print "default case";
+        break;
+    }
+   
+event
+	- functions that can be scheduled and executed at later time
+	- return no value since they are not called directly
+	- multiple bodies can be defined for the same event (execute in order of &priority)
+
+	event myevent(s: string) &priority = 10
+	{
+	
+	}
+
+	schedule 5 sec { myevent("bye") };
+
+
+hook
+	- can have multiple bodies like events
+	- cannot be scheduled, must be executed immediately
+	- if end of body or return statement reached, next hook ran
+	- break will discontinue hook
+
+	hook myhook(s: string) &priority = 10
+	{
+
+	}
