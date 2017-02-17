@@ -69,3 +69,86 @@ OSI and TCP/IP models
 		- indentifies communication partners
 		- syncs communication
 		- determines resources available
+
+	- tcp/ip model
+		- network interface: combination of physical and datalink layer
+		- internet layer: network layer
+		- transport layer: transport layer
+		- application layer: session + presentation + application layer
+
+Devices and Protocols in relation to OSI
+	- MAC address
+		- media access control address
+		- layer 2 data link
+		- physical address
+	- IP address
+		- layer 3 network layer
+		- logical address matched to physical address
+	- EUI 64
+		- layer 2 data link
+		- ipv6 global unicast
+		- specific to network around the world
+		- data link since it is specific to physical device
+	- frames
+		- layer 2 protocol delivery unit
+		- segment of data 
+	- packet
+		- layer 3 protocol delivery unit
+		- segment of data
+	- switch
+		- layer 2
+		- map to MAC addresses
+	- router
+		- layer 3 
+		- moves data across networks
+		- maps ip addresses to mac addresses
+	- hub
+		- layer 2
+		- passes information to everyone
+		- "dumb" switch
+	- encryption device
+		- layer 6 presentation
+		- format data
+		- device on the wire that encrypts and decrypts
+	- cable/NIC
+		- layer 1 physical
+	- bridge
+		- layer 2
+		- point to point connectivity
+
+IP addresses
+	- format
+		- 32 bit address
+		- divided into 4 octets (each section has 8 bits)
+		- max number in octet is 255
+		- 256 total values since 0 is valid (256 is not)
+		- binary
+			- 128 64 32 16 8 4 2 1
+			- 1 adds the value 0 does not
+			- 11111111 = 255
+	- classes
+		- describes how many hosts can be on ip
+		- class a
+			- 1.0.0.0 - 126.0.0.0
+			- subnet mask 255.0.0.0
+			- first octet is network id
+			- very few class a addresses
+			- millions of hosts can be on network
+			- useful for ISPs
+		- class b
+			- 128.0.0.0 - 191.255.0.0
+			- first and second octet is network
+			- subnet mask 255.255.0.0
+		- class c
+			- 192.0.0.0 - 223.255.255.0
+			- first three octets network id
+			- subnet mask 255.255.255.0
+		- class d
+			- for multicasting (sending values to multiple computers)
+			- 224.0.0.0 - 239.0.0.0
+	- subnet mask
+		- anything on a ip address for corresponding bit is part of network id
+		- ex: 255.0.0.0 subnet mask
+		- all values in first octet are part of network id
+
+
