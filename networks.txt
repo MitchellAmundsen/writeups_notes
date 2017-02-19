@@ -150,5 +150,88 @@ IP addresses
 		- anything on a ip address for corresponding bit is part of network id
 		- ex: 255.0.0.0 subnet mask
 		- all values in first octet are part of network id
+	- public vs private
+		- every device in a network gets a private ip
+		- routers given public ip addresses
+		- can use different private networks within one network to separate devices
+			- 192.168.0.1 and 192.168.1.1
+		- private classes
+			- class a
+				- 10.0.0.0 - 10.255.255.255
+				- subnet mask 255.0.0.0
+				- default addressing subnet mask 255.0.0.0
+			- class b
+				- 172.16.0.0 - 172.31.255.255
+				- subnet mask - 255.240.0.0
+				- default addressing subnet mask - 255.255.0.0
+				- difference between two subnet masks allows us 15 (255-240) network 
+			- class c 
+				- 192.168.0.0 - 192.168.255.255
+				- subnet mask - 255.255.0.0
+				- default addressing subnet mask - 255.255.255.0
+				- allows 255 different networks
+
+APIPA Automatic Private IP Addressing
+	- 169.254.x.x
+	- when DHCP is unavailable
+
+CIDR Classless Inter-Domain Routing
+	- variable length subnet masks
+	- /16 vs. 255.255.0.0
+	- /N is the number of continuous bits that are 1 from left to right
+	- /12 = 255.240.0.0
+
+IPV4 vs. IPV6
+	- ipv4
+		- 32 bits into 4 octets
+		- 4 billion ip addresses
+	- ipv6
+		- 128 bit 
+		- in hexadecimal format
+			- each character is composed of 4 bits
+			- A - F = 10 - 15
+		- consec 0's = ::
+			- can only work once
+			- use on most consecutive 0's in address
+		- omit leading 0 in hex set
+
+MAC Addresses
+	- each NIC has it's own MAC address
+		- laptop will have two if it has wired and wireless connection
+		- dongle will have own MAC as well
+	- format
+		- in hexidecimal format
+		- 6 sections of 2 hex characters
+		- 48 bit address
+	- used in 
+		- DNS
+		- ARP
+		- DHCP
+			- new device on network sends DHCP discover request
+			- asks for anybody that does DHCP
+			- DHCP device sends our IP address for new device and waits for response
+			- once confirmation response, gives new device IP
+			- uses MAC address for communicatin during that process
+	- data link layer 2
+
+Subnetting
+	- additional networks to a/b/c
+	- have beginning/end that you cant use
+	- first - network ID (even)
+	- last - broadcast (odd)
+	- ip address with subnet mask
+		- N = furthest left number not 255
+		- 256 - N = network increment
+		- first usable = netid + 1 increment
+		- last usable = next netid - 2
+		- ex:
+			- ip: 192.168.1.37
+			- sm: 255.255.255.240
+			- N - 240
+			- net inc = 256 - 240 = 16
+			- net ID = 32
+			- broadcast = 32 + 16 -1 = 47
+			- usable addresses = 33 - 46
+
 
 
