@@ -151,4 +151,59 @@ IP addresses
 		- ex: 255.0.0.0 subnet mask
 		- all values in first octet are part of network id
 
-
+Router/Switches/Hubs etc.
+	- hub
+		- sends packets to every node connected
+		- computer decides to accept or reject
+	- switch
+		- tracks MAC addresses and ports connected
+		- sends packets to node directed to
+	- multi-layer switch
+		- routing and switching
+		- layer 2 and 3
+	- bridge
+		- connect network segments
+		- passes data to other bridge
+		- layer 2
+		- wireless bridges can connect single network
+	- repeater
+		- take signal and amplify them (power)
+		- can also clean signal
+	- router
+		- move data across different networks
+		- segment / subnetting of network
+		- manage traffic flow
+		- manage tables
+			- where to send data
+			- internal MAC to IP
+		- default gateway
+			- router only sends packets directed to it
+			- computer has default gateway router that it sends to if unknown destination
+		- routing tables
+			- where to pass data
+			- information needed (protocol based)
+				- destination network IP/SM
+				- steps to get there (router path)
+				- number of hops to other routers
+			- cmd: route print to view computer routing table
+			- protocols determine fastest path
+		- metrics (qualities for best path)
+			- hop count: how many routers from A to B
+				- cmd > tracert 8.8.8.8
+			- maximum transmission unit: largest packet size/bandwidth
+			- cost
+				- reliability, roundtrip time, etc
+				- low # = good
+				- high # = bad
+			- latency: delay on this link
+			- protocols
+				- link state
+					- $$ cost based
+					- multiple factors (distance, speed, etc)
+					- OSPF
+				- distance vector
+					- # of hops
+					- RIP & RIPv2
+				- hybrid
+					- both
+					- distance vector and link state
