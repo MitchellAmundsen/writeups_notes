@@ -252,41 +252,97 @@ Router/Switches/Hubs etc.
 	- repeater
 		- take signal and amplify them (power)
 		- can also clean signal
-	- router
-		- move data across different networks
-		- segment / subnetting of network
-		- manage traffic flow
-		- manage tables
-			- where to send data
-			- internal MAC to IP
-		- default gateway
-			- router only sends packets directed to it
-			- computer has default gateway router that it sends to if unknown destination
-		- routing tables
-			- where to pass data
-			- information needed (protocol based)
-				- destination network IP/SM
-				- steps to get there (router path)
-				- number of hops to other routers
-			- cmd: route print to view computer routing table
-			- protocols determine fastest path
-		- metrics (qualities for best path)
-			- hop count: how many routers from A to B
-				- cmd > tracert 8.8.8.8
-			- maximum transmission unit: largest packet size/bandwidth
-			- cost
-				- reliability, roundtrip time, etc
-				- low # = good
-				- high # = bad
-			- latency: delay on this link
-			- protocols
-				- link state
-					- $$ cost based
-					- multiple factors (distance, speed, etc)
-					- OSPF
-				- distance vector
-					- # of hops
-					- RIP & RIPv2
-				- hybrid
-					- both
-					- distance vector and link state
+
+
+Router
+	- move data across different networks
+	- segment / subnetting of network
+	- manage traffic flow
+	- manage tables
+		- where to send data
+		- internal MAC to IP
+	- default gateway
+		- router only sends packets directed to it
+		- computer has default gateway router that it sends to if unknown destination
+	- routing tables
+		- where to pass data
+		- information needed (protocol based)
+			- destination network IP/SM
+			- steps to get there (router path)
+			- number of hops to other routers
+		- cmd: route print to view computer routing table
+		- protocols determine fastest path
+	- metrics (qualities for best path)
+		- hop count: how many routers from A to B
+			- cmd > tracert 8.8.8.8
+		- maximum transmission unit: largest packet size/bandwidth
+		- cost
+			- reliability, roundtrip time, etc
+			- low # = good
+			- high # = bad
+		- latency: delay on this link
+		- protocols
+			- link state
+				- $$ cost based
+				- multiple factors (distance, speed, etc)
+				- OSPF
+			- distance vector
+				- # of hops
+				- RIP & RIPv2
+			- hybrid
+				- both
+				- distance vector and link state
+	- IGP vs EGP
+		- Interior Gateway Protocol
+			- protocols that work inside single managed network
+			- communicating multiple internal routers together
+			- RIP
+				- routing information protocol
+				- distance vector (hop count)
+				- max 15 hops
+				- only handles standard classful subnets (a, b, c, d)
+			- RIPv2
+				- more hops
+				- support for classless addresses
+			- OSPF
+				- open shortest path first
+				- most used IGP
+				- link state analysis (cost based)
+				- supports classless
+			- IGRP
+				- cisco distance vector
+				- more hops than RIP/no classless addresses
+			- EIGRP
+				- enhanced IGRP
+				- cisco hybrid
+				- supports classless
+		- Exterior Gateway Protocol
+			- communicated external routers
+			- uses BGP (border control protocol)
+				- path-vector protocol
+				- one speaker node in each domain
+				- transmits routing tables
+	- Dynamic Routing Tables
+		- automatically finds the 'best' route
+		- convergence 
+			- all routers have same topology and routing information
+			- occurs at different rates
+				- network size
+				- types of routing protocols
+				- hardware/device problems
+	- Spanning Tree Protocol
+		- loops in network infastructure will cause problems with broadcasts
+		- blocks certain links to prevent loops
+		- most direct path not always available
+		- if devices go offline, blocks may be removed
+
+Broadcast vs. Collision Domain
+	- broadcast comain
+		- devices that can be reached at layer 2
+		- not through router
+	- collision domains
+		- two or more devices that if multiple talk there is collision
+		- links between devices
+		- hubs create collision domains (hubs dumb and talk while other device may send data)
+		- switches, routers, bridges stop collisions
+
