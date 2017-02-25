@@ -346,3 +346,26 @@ Broadcast vs. Collision Domain
 		- hubs create collision domains (hubs dumb and talk while other device may send data)
 		- switches, routers, bridges stop collisions
 
+VLAN
+	- virtual local area network
+	- segment large network
+		- broadcasts go to the same vlan
+		- access port: connect devices in vlan to switch
+		- trunk port: connect different switches from different vlans together
+			- allow traffic from all vlans
+			- tags packets (frames?) with vlan information
+	- vlan filter criteria
+		- physical port (manual)
+		- mac addresses
+		- subnetting IP addresses
+
+Port Mirroring (SPAN ports)
+	- SPAN: switch port analyzers
+	- switches only send packets to port addressed to, bad for diagnostics or other reasons
+	- SPAN can configure port to have all data mirrored to it
+		- capture network data
+		- diagnostic/research/IDS
+		- devices can't talk on SPAN port
+			- workaround is to have two NICs and connect to different port
+		- can have all ports mirrored to one port
+		- may drop packets if too much data sent (only on SPAN port)
