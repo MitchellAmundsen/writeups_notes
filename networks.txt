@@ -369,3 +369,27 @@ Port Mirroring (SPAN ports)
 			- workaround is to have two NICs and connect to different port
 		- can have all ports mirrored to one port
 		- may drop packets if too much data sent (only on SPAN port)
+
+TCP/IP Suite
+	- TCP: transmission control protocol
+		- verified delivery to endpoint
+		- one to one comm
+		- encompasses a number of protocols
+	- IP: internet protocol
+		- delivers packets to devices
+		- maps logical to physical (ip to mac)
+		- routable protocol
+	- simple protocol overview
+		- data link
+			- ARP: IP to MAC address
+		- network
+			- router protocols (RIP, RIPv2, OSPF)
+			- IP 
+			- DHCP (get IP information, with UDP)
+		- transmission
+			- TCP/UDP
+		- session
+			- DNS (from TCP)
+		- application
+			- POP3, HTTPS, SSH (from TCP)
+			- TFTP (from UDP)
