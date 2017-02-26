@@ -437,3 +437,72 @@ Internet Control Message (don't user port)
 			- next time computer asks for the default gateway, computer responds pretending to be that router
 			- can mitm and view traffic
 
+Protocols
+	- FTP (:21)
+		- file transfer protocol
+		- no encoding/overhead
+		- insecure
+	- TFTP (:69)
+		- trivial ftp
+		- send to multiple clients
+		- over udp
+	- SFTP (:22)
+		- encrypt with SSH
+		- more secure than ftp
+	- SMTP (:25)
+		- simple mail transfer protocol
+		- used for transfer from client to server and server to server
+	- POP3 (:110)
+		- post office protocol 3
+		- client download from server
+		- copies file from server than deletes on server
+	- IMAP (:143)
+		- download server to client
+		- keeps copy of message on server
+		- more config than pop3
+	- HTTP (:80)
+		- hypertext transfer protocol
+		- used by browsers
+		- browser sends a get request 
+		- sent over cleartext
+	- HTTPS (:443)
+		- encrypted HTTP
+		- certificate between client/server
+	- Telnet (:23)
+		- remote terminal connection
+		- unencrypted
+		- replaced by SSH
+		- udp or tcp
+	- SSH (:22)
+		- encrypted connection
+		- secure remote shell
+		- may work with other protocols
+	- RDP (:3389)
+		- remote desktop (microsoft windows program)
+		- may need to be blocked
+		- udp or tcp
+	- SNMP (:161 agent | :162 manage)
+		- management of devices over IP
+		- routers, printers, etc
+		- agent is on adevice and accessed by management
+	- NTP (:123)
+		- network time protocol
+		- syncs time on devices on network
+		- over udp
+	- TLS (:varies)
+		- transport later security
+		- successor to SSL
+		- runs over other protocols (http to https)
+	- DNS (:53)
+		- lookup domain name to IP
+		- transmits from databases
+		- udp or tcp
+	- DHCP (:67 server | :68 client)
+		- configure IP address info
+		- over udp
+		- give 
+			- IP address
+			- subnet mask
+			- dns server
+			- default gateway
+		- static ip address client does not use dhcp
