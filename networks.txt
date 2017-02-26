@@ -393,3 +393,47 @@ TCP/IP Suite
 		- application
 			- POP3, HTTPS, SSH (from TCP)
 			- TFTP (from UDP)
+
+TCP Protocol
+	- transmission control protocol
+	- larger header (20 bytes)
+		- addressing information
+		- which order the packet is in (numbered)
+		- retransmission
+	- large packets size due to header
+	- 1 to 1 connection oriented
+	- three way handshake
+		- SYN: initiate connection, synchronize, sent from initiator
+		- SYN/ACK: receiver acknowledges SYN
+		- ACK: initiator ackowledges successful connection
+	- data sent as stream, cut up as max packet size based on connection/network
+	- checksums to ensure packet is not corrupted
+
+UDP Protocol
+	- user datagram protocol
+	- connectionless
+	- no error recovery, no check on packet corruption
+	- distinct chunks
+		- unlike tcp where packets are max size
+		- udp packet must make sense with next level protocol
+		- logical chunks prepares for chance of next packet not being received
+
+Internet Control Message (don't user port)
+	- ICMP (layer 3)
+		- internet control message protocol
+		- deliver error/query
+		- determine if service is available
+		- echo request to see if online (ping)
+		- used for ping, trace route request
+	- IGMP (layer 3)
+		- internet group management protocol
+		- multicast membership
+	- ARP (layer 2.5)
+		- IP to MAC
+		- manage tables
+		- ARP request enumerate network
+		- who is x tell x mitm
+			- malicious device uses arp request to determine all computers default gateway in network
+			- next time computer asks for the default gateway, computer responds pretending to be that router
+			- can mitm and view traffic
+
