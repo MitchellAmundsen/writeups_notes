@@ -437,3 +437,20 @@ Internet Control Message (don't user port)
 			- next time computer asks for the default gateway, computer responds pretending to be that router
 			- can mitm and view traffic
 
+DNS
+	DNS records
+		- A
+			- ip address record
+			- sales.cybrary.local = 192.168.1.17
+		- AAAA
+			- ipv6 address record
+		- CNAME
+			- canonical name
+			- from one domain name to another
+		- MX
+			- mail exhchange name
+			- which server/service to send emails to 
+			- gmail may host specific domains emails
+		- PTR
+			- pointer
+			- does reverse lookups (ip to domain name)

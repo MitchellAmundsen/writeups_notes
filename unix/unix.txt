@@ -1,0 +1,31 @@
+
+directory structure
+	- file or directory identifier
+		- name
+		- directory 
+		- unique identifier inode (nodes in)
+			- root has inode 2
+			- inode 1 and 0 are not used
+			- ls -i will give inode
+	- / root directory (top level)
+	- /bin executables available to all users located
+	- /dev device drivers
+	- /etc 
+		- supervisor directory commands
+		- config files
+		- disk config files
+		- valid user lists
+		- groups
+		- ethernet
+		- hosts
+		- where to send critical messages
+	- /lib shared library files and kernel related files
+	- /boot boot files for system
+	- /home home directory for users and other accounts
+	- /mnt mounted drives 
+	- /proc contains all processes marked as a file by process number
+	- /tmp temporary files used between system boots
+	- /usr used for miscellaneous purposes (admin commands, shared files, library files, etc)
+	- /var variable length files (logs, print files, etc)
+	- /sbin sysadmin binary executables (ex: fdisk and ifconfig utilities)
+	- /kernel kernel files

@@ -1,0 +1,46 @@
+
+Malware Classifications
+	- adware
+	- spyware
+	- PUP
+	- trojan
+	- rootkit
+	- ransomware
+	- virus
+	- worm
+	- bot
+
+Infection Vectors
+	- phishing emails
+	- infected websites and ads
+	- exploit kits
+	- social engineering
+	- infected removable media
+	- self-propagating
+
+Persistence
+	- registry
+	- scheduled tasks
+	- startup programs (registry)
+	- browser plugins
+	- DLL search order hijacking (icebrg doc)
+	- shortcut hijacking
+	- bootkits
+
+Anti-Detection
+	- anti-debugging
+	- code and data obfuscation
+	- anti-vm selective execution
+	- hide in legitimate processes
+	- API hooks
+	- sleep when not used (daemon?)
+	
+Resources
+	- virustotal
+	- threatcrowd
+	- urlQuery
+	- hybrid analysis
+	- malware-traffic-analysis
+	- malware don't need coffee
+	- CVE common vulnerability exposure
+	- virtual box
