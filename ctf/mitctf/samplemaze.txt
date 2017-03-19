@@ -1,0 +1,38 @@
+################################################################################
+---------------
+
+Waiting for seed from seed server...
+---------------
+...done
+---------------
+
+################################################################################
+                        Solve 10 mazes in under 1 second!
+         Accepts a list of u, d, l, and r characters to move from S to *
+################################################################################
+X  XX  XXX X  X   X     X X      XX XX    X  XX X XX      XX XX XX X   X        
+XXX    X      X   X    X  XXX  XX   XX X  X X     X          X    X X     X     
+X  X    X X    X   X  XX  XXX X XX   X X X  X XXXX   X       X  XXXX  X X       
+X X X  X   XX    X   XX   X   XX   XX         X           X          X    X     
+XX  X XX   X    X    X XX   X   X    XXX           XXX X  X        XX     X     
+XX     XXX XX  X   X X X           XX   X    X   X       X  XX X      X  XX     
+X    X X     XX X   X X         XX  X X X  X      X     X     X     XXX         
+X     XX  X    X       X       X   X    X  X        X      XX           X  X    
+X     XX   X X X XX  XX   X   X XX    X XX   
+---------------
+      X    X    X   X   X          
+X   X            X   X       X          X     XX    X   XX  X  X X      X    X  
+XS  X         XX X     XX       X     X   X   X XX XX X X      XXX   X XXX X    
+XX X     XXX   XX    XX  XX   X XX X          X     X X       X  XX     XX      
+X    X   X             X    X     X    X X          X      XX  X                
+XXX          X                    X     XXX   XXXX   X    XX  XX                
+XX X XX X    
+---------------
+X                             X     X       X  X  X       X X X    
+X XXXXXX  X XXX     XX     X X       X   XXXX X  XXX  XXX       XX    X X       
+X   X    X  X    XX X            XX    X   X   X    X     X  X  X   X       XX  
+X      X  XX     XX X  X X  XX  X  X       X XX  X     X    X   X X   X         
+X    X      XX     XX  X  XX  X X    XX   X    X     X X X  X     XXX      X   X
+X   X   XX   X X    X    XX      XX  X XX    X  X  X X    X  X XX  XX X XXX    *
+Your solution: 
+---------------

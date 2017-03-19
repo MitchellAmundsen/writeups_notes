@@ -8,4 +8,20 @@ XZ
 	- z flag compress
 	- d flag decompresses
 
+Socket
+	- create connection with destination and port
+	- receive streams of data
+	- able to send data
+	- create_connection returns socket object 
 
+GZIP
+	- reduces file size by compression
+	- will add .gz extension to file
+	- decompression
+		- gzip -d
+		- gunzip
+		- zcat
+	
+GPG
+	- openPGP version of GNU Privacy Gaurd
+	- tool to provide digital encryption and signing
