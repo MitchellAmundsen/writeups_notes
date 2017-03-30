@@ -586,4 +586,12 @@ February 7th 2017
 				- extensible architecture
 
 
+March 29th 2017
+
+	GPG (GNU Privacy Guard)
+		- free encryption software that's compliant with OpenPGP
+		- encrypts and signs data
+		- key management system 
+		
+
 

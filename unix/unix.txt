@@ -29,3 +29,26 @@ directory structure
 	- /var variable length files (logs, print files, etc)
 	- /sbin sysadmin binary executables (ex: fdisk and ifconfig utilities)
 	- /kernel kernel files
+
+commands
+	- cat filename: displays text from file
+	- cd dirname: more you to directory
+	- cp file1 file2: copies file/directory to specified location
+	- file filename: identifies the file type
+	- find filename dir: finds file/directory
+	- head filename: shows beginning of file
+	- less filename: browsers through file from end or beginning
+	- ls dirname: sows content of directory
+	- mkdir dirname: creates specified directory
+	- more filename: browses through a file from beginning to end
+	- mv file1 file2: moves location of or renames file/directory
+	- pwd: shows the current directory
+	- rm filename: removes a file
+	- rmdir dirnae: removes a directory
+	- tail filename: shows the end of a file
+	- touch filename: creates a blank file or modifies an existing file
+	- whereis filename: shows the location of a file
+	- which filename: shows the location of a file if it is in your path
+	- df -k: disk usage in kilobytes
+	- du dirname: disk usage in specified directory
+	- mount: displays currently mounted drives
