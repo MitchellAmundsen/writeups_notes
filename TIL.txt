@@ -594,4 +594,14 @@ March 29th 2017
 		- key management system 
 		
 
+March 31st 2017
 
+	DNS Amplification Attack
+		- type of DDos attack
+		- small DNS query can generate larger response
+		- factors
+			- open recursion: recursive server sending larger responses from small queries
+			- source address spoofing: source address of query is spoofed to be target
+			- botnet: used to send large number of requests
+			- ENDS0: mechanism that allows DNS requestors to advertise size of UDP packets and facilitate transfer of packets larger than 512 bytes (64 byte request gets 512 byte response)
+			- DNSSEC: adds security to DNS response with cryptographic signatures but results in larger message size
