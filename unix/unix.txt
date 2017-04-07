@@ -52,3 +52,4 @@ commands
 	- df -k: disk usage in kilobytes
 	- du dirname: disk usage in specified directory
 	- mount: displays currently mounted drives
+	- xxd: makes hexdump or reverse
