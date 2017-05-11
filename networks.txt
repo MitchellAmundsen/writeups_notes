@@ -506,3 +506,18 @@ Protocols
 			- dns server
 			- default gateway
 		- static ip address client does not use dhcp
+	- SIP (:5060)
+		- session initiation protocol
+		- initiates session but no data
+		- indicates to remote computer to open port for communication
+		- goes through server to ask for open port for direct communication
+	- RTP 
+		- real time protocol
+		- stream video, audio (VOIP)
+		- detects out of sequence arrival
+
+- Virtual
+	- virtual switches
+		- switch like connectivity
+		- allow vlans
+		- utilize nic as trunk port
