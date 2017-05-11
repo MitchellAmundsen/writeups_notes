@@ -1,0 +1,11 @@
+1) tyrannasourus hex
+	- hexidecimal has letter values a-f that have number values
+	- a = 10, b = 11 ...
+	- x = 0
+	- last number goes first
+	- each number if multiplied by it's 16^(it's place)
+	- 3b
+		- b = 11 
+		- 11 * 16^0 = 11
+		- 3 * 16^1 = 48
+		- 3b = 59
