@@ -1,0 +1,5 @@
+nmcli - command line tool for network management
+	- ex: nmcli device show <interfacename> 
+
+Flush DNS
+	- service nscd restart
