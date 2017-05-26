@@ -1,5 +1,17 @@
 nmcli - command line tool for network management
 	- ex: nmcli device show <interfacename> 
 
-Flush DNS
-	- service nscd restart
+Flush DNS = service nscd restart
+
+Show all services/status = service --status-all
+
+Previous commands
+	- show list of previous commands = history
+	- use command from list = !{command index}
+	- use last command = !!
+
+Logs
+	- GUI log viewer = Log File Viewer on Ubuntu
+	- write to logs = logger "Hello World"
+	- display logs command = dmesg
+	- log file = /var/log/syslog

@@ -1,9 +1,0 @@
-
-gg - cursor to top
-G - cursor to botton
-
-zz - cursor in middle of screen
-zt - cursor in top 
-zb - cursor at botton of screen
-
-:w !sudo tee % - sudo write

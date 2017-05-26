@@ -1,0 +1,29 @@
+
+cursor to top - gg
+cursor to bottom - G
+
+cursor located in middle of screen - zz
+cursor located at top of screen - zt
+cursor located at bottom of screen - zb
+
+sudo write - :w !sudo tee %
+
+tab pages
+	from command line - vim -p first.txt second.txt
+	open specified file in new tab - :tabedit {file}
+	open searched file in new tab - :tabfind {file}
+	close current tab - :tabclose
+	close ith tab - :tabclose {i}
+	close all other tabs - :tabonly
+
+	list all tabs - :tabs
+	move to ith tab - :tabm {i}
+	next tab - :tabn
+	previous tab - :tabp
+
+	next tab normal mode - gt
+	previous tab normal mode - gT
+	ith tab normal mode - {i}gt
+
+set path - :set path={desired path}
+
