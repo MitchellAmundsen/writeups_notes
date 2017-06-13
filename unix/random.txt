@@ -35,3 +35,7 @@ Openssl
 Lockscreen = xflock4, ctrl + alt + L
 
 List hardward = lshw
+
+Change Screen Output/Orientation
+	- list displays = xrandr --query
+
