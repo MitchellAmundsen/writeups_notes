@@ -15,3 +15,23 @@ Logs
 	- write to logs = logger "Hello World"
 	- display logs command = dmesg
 	- log file = /var/log/syslog
+
+Dropbox daemon = ~/.dropbox-dist/dropboxd
+
+ssh keys
+	- create ssh key = ssh-keygen -t rsa -b 4096 -C "<email>"
+	- enter ssh agent = eval "$(ssh-agent -s)"
+	- add ssh key = ssh-add !/.ssh/id_rsa
+	- key location = /home/<user>/.ssh/id_rsa
+
+Package stuff
+	- list all available packages = apt list
+	- update apt get before installing = apt-get update
+
+Openssl
+	- number of ciphers to choose from
+	- des3 encrypt example = openssl des3 < test.txt > test.txt.des3
+
+Lockscreen = xflock4, ctrl + alt + L
+
+List hardward = lshw
