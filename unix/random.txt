@@ -39,3 +39,11 @@ List hardward = lshw
 Change Screen Output/Orientation
 	- list displays = xrandr --query
 
+TMUX
+	- tmux shortcut =  ctrl + b
+	- view tmux windows = tmux ls
+	- new session = tmux new -s <option session name>
+	- attach to existing session = tmux attach -t <option session name>
+	- detach from existing session (can come back later) = tmux detach
+	- kill session = tmux kill-session -t <session name>
+ 

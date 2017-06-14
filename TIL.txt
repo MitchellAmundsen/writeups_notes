@@ -605,3 +605,42 @@ March 31st 2017
 			- botnet: used to send large number of requests
 			- ENDS0: mechanism that allows DNS requestors to advertise size of UDP packets and facilitate transfer of packets larger than 512 bytes (64 byte request gets 512 byte response)
 			- DNSSEC: adds security to DNS response with cryptographic signatures but results in larger message size
+
+
+June 13th 2017
+
+	Puppet
+		- IT configuration management tool
+		- has own declarative language
+		- push out puppet ruleset that configures different IT functionality
+		- client server architecture 
+		- server has puppet ruleset and puppet agent communicates with server to get conf
+	
+
+June 14th 2017
+
+	dnsmasq
+		- type of server that serves as DNS and a DHCP server
+		- allows for static and dynamic DHCP leases
+		- allows dhcp allocated machines to appear in DNS
+
+	Jenkins
+		- open source automation server 
+		- runs in servlet containers
+		- supports version control
+		- automates the non-human part of software
+		
+	KVM (Kernel-based Virtual Machine)
+		- virtualization solution for linux
+		- loadable kernel module, processor specific module
+		- can run multiple virtual machines running unmodified linux or windows images
+		 
+	MCollective
+		- framework for server orchestration and parrallel job execution
+		- uses metadata discovery and filtering instead of static hosts list
+		- uses middleware to communicate to many hosts
+	
+	iDRAC
+		- integrated dell remote access 
+		- integrated management portal used to configure servers
+

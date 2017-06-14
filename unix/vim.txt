@@ -27,3 +27,4 @@ tab pages
 
 set path - :set path={desired path}
 
+run unix command - :!<command>

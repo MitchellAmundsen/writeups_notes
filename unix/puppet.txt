@@ -1,0 +1,116 @@
+
+What is Puppet
+	- puppet-agents check in with master every 30 minutes
+	- puppet master specifies desired state
+	- configuration drift = out of sync states
+	- puppet agent sends facts to puppet master when checking in
+	- puppet-agent sends report after its run
+
+Resources
+	- resources are fundamnetal units for modeling system configuration
+	- resource declaration = block of puppet code that describes a resource
+	- resource syntax
+		- resource type
+		- curly braces define resource block
+		- title separated from body with colon
+		- body consists of attribute and value pairs
+		- ex:
+
+		user { 'gary':
+			ensure => present,
+			uid    => '1002',
+			gid    => '01',
+		}
+
+		- type and title must be unique for a node
+		- use alphanumerics and quote strings
+		- include a comma after every attribute
+	- resource types
+		- file
+		- package
+		- service
+		- user
+		- notify
+		- exec
+		- cron
+		- group
+	- how it works
+		- resource declaration adds resource to catalog
+		- compiles what desired resource should look like through resource abstraction layer
+		- puppet reads actual state of resource and compares against catalog
+		- changes system to enforce desired state if necessary
+	- duplicated title and name in resources will cause failure
+	- puppet resource
+		- command line tool for inspecting resource on system
+		- puppet resource [type] [title]
+		- returns resource blog
+
+Classes
+	- a collection of resources as a single unit
+	- class = package + file + service resource
+	- define a class to allow it to be declared in catalog
+	- declare = to direct puppet to include or instantiate a class
+		- ex:
+		
+		# /etc/puppetlabs/puppet/manifests/site.pp
+		include ssh
+
+		or 
+
+		class {"ssh":}
+	- classes are reusable
+	- can only be declared once on given node (singleton)
+	
+	- puppet parser validate motd.pp = validate your syntax
+	- puppet apply motd.pp
+
+Autoloading
+	- manifests = puppet source code that defines class or type within a module
+	- module = directory for file of a given congifuration
+	- structure
+		- directory name = module name
+		- manifest = contains contains manifests, also init.pp which has class definition with same name as module
+		- file 	= static files that nodes can download
+		- templates = templates which modules can use
+		- lib = plugins custom faces, and custom resources
+		- tests = examples showing how to declare classes, modules, and define types
+		- spec = rests for any plugin in the lib directory
+	- modulepath = conf setting to specify location of modules ($codedir/modules by default)
+	
+Faceter
+	- facter is a cross platform system profiler
+	- discovers and reports per-node facts as variables
+	- facter command list of key-value pair
+	- key-value pairs are called facts
+	- facts accessible as variables in manifests $<face name>
+		- user ${::<face name>} to specify top scope
+	- custom facts
+		- created with ruby on puppet master
+		- distribute custom facts through plugins and modules
+	- external facts
+		- use arbitrary executable or scripts as facts
+		- set facts statically using structured data
+	- facter dommands
+		- facter = all known facts
+		- facter fqdn = returns fully qualified domain name
+		- facter interfaces
+		- facter ipaddress_eth0
+
+Relationships
+	- resources can specify relationships to determine order resources are ran
+	- metaparameter (reference pointing toward resource)
+		- before/require: resource to be applied before/after target
+			- can chain with ->
+		- notify/subscribe: same as before/require but resource will refresh if notifying changes
+			- can chain with ~>
+			- first in chain applied first
+
+Puppet Forge
+	- community of content creators
+	- classes for managing applicationss
+	- custom facts for determining a machine's warranty status
+	- custom types and providers that let you manage new things as puppet resources
+	- patches and support to your new modules
+	- your changes kept but patches and support kept up on existing modules
+	
+	- search for vmwaretools = puppet module search vmwaretools
