@@ -3,6 +3,8 @@ nmcli - command line tool for network management
 
 Flush DNS = service nscd restart
 
+Current Directory = pwd
+
 Show all services/status = service --status-all
 
 Previous commands
@@ -34,7 +36,7 @@ Openssl
 
 Lockscreen = xflock4, ctrl + alt + L
 
-List hardward = lshw
+List hardware = lshw
 
 Change Screen Output/Orientation
 	- list displays = xrandr --query
@@ -46,4 +48,6 @@ TMUX
 	- attach to existing session = tmux attach -t <option session name>
 	- detach from existing session (can come back later) = tmux detach
 	- kill session = tmux kill-session -t <session name>
- 
+
+Sudo
+	- parsed when sudo is ran = /etc/sudoers.d  

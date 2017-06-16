@@ -44,6 +44,12 @@ Resources
 		- command line tool for inspecting resource on system
 		- puppet resource [type] [title]
 		- returns resource blog
+	- commands
+		- puppet resource user = list all users
+		- puppet resource user <username> = list specific user
+		- puppet resource package = list all packages
+		- puppet resource host = query system for host records
+	
 
 Classes
 	- a collection of resources as a single unit
@@ -77,7 +83,7 @@ Autoloading
 		- spec = rests for any plugin in the lib directory
 	- modulepath = conf setting to specify location of modules ($codedir/modules by default)
 	
-Faceter
+Facter
 	- facter is a cross platform system profiler
 	- discovers and reports per-node facts as variables
 	- facter command list of key-value pair
@@ -114,3 +120,51 @@ Puppet Forge
 	- your changes kept but patches and support kept up on existing modules
 	
 	- search for vmwaretools = puppet module search vmwaretools
+
+Event Inspector
+	- reporting tool to investigate current state of infastructure
+		- monitor a summary of infrastructure activity
+		- analyzing details of important change and failures
+	- a report created if puppet attempts to change something
+	- events
+		- change 
+		- failure (puppet couldn't make change)
+		- noop = puppet tried to make change but no change specified previously
+		- skip = prereq not met to compare
+	- prespectives used to correlate events or failures
+		- classes (what)
+		- nodes (where)
+		- resources (how)
+	
+Roles and Profiles
+	- can assign classes to nodes
+	ex: 
+		node 'example.com' {
+			include network
+			include users
+			include mysql
+		} 
+	
+	- promote clarity and resutability
+	- role is a set of profiles that will be assigned to a node
+	- profile is a set of classes that will be assigned to a role
+	- layers of abstraction
+
+Exec Resource
+	- can be used to execute puppet command given small amount of login
+	- ex: adds web user 'bob' if it doesn't already exist
+	
+		exec {'webuser add bob':
+			unless	=> 'webuser check bob',
+			path	=> '/usr/local/bin',
+		}
+	- logic includes unless and onlyif
+	- refreshonly means exec will only run if notify or subscribe event occurs
+
+Testing
+	- pupper parser validate <file>.pp to validate syntax
+	- puppet-lint <file>.pp to validate style (install with gem install puppet-lint)
+	- rspec-puppet for unit tests
+	- puppetlabs_spec_helper makes unit testing easier for puppet
+
+
