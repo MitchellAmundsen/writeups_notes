@@ -644,3 +644,16 @@ June 14th 2017
 		- integrated dell remote access 
 		- integrated management portal used to configure servers
 
+June 16th 2017
+
+	QEMU
+		- free and open-source hyper visor platform (VM)
+		- can be used with KVM to run VMs at near-native speed
+		- can do cpu emulation
+
+	qcow2 (QEMU Copy On Write)
+		- image file format used by QEMU	
+		- format can grow as data is added
+		- allows for smaller file sizes than raw images
+		- allows changes to read-only base image of separe qcow file using copy of write
+

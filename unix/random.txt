@@ -29,6 +29,7 @@ ssh keys
 Package stuff
 	- list all available packages = apt list
 	- update apt get before installing = apt-get update
+	- list repositories = apt-cache policy
 
 Openssl
 	- number of ciphers to choose from
@@ -51,3 +52,14 @@ TMUX
 
 Sudo
 	- parsed when sudo is ran = /etc/sudoers.d  
+	- must use visudo to edit /etc/sudoers.d 
+
+Secure copy to hosts on network = scp
+
+Permission
+	- change file owner = chown root:root <filename>
+
+Upgrading
+	- upgrade = sudo do-release-upgrade
+	- -d for dev options
+	- ubuntu run "update-manager -c"
