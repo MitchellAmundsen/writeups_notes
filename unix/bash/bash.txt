@@ -1,0 +1,31 @@
+
+#!
+	- kernel scans whole line after #! for full pathname of an interpreter
+	- #! /bin/sh
+	- add - after path to prevent certain spoofing attacks
+
+printf
+	- like echo but has % variables in line
+	- printf "This is a %s test." dope
+	  This is a dope test
+/dev/null
+	- nothing is saved in this directory
+	- useful for writing things in command 
+
+.profile
+	- runs each time user logins in and uses settings
+	- add path: PATH=$PATH:$HOME/bin
+
+shell args
+	- positional arguments
+	- $1 will be first argument
+	- any argument > 9 needs {}
+	- ${10} is tenth
+
+execution tracing
+	- shows each command as they are ran in script
+	- -x flag in command
+	- set -x in script itself
+	- set +x to turn off in script
+
+

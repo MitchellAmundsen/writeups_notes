@@ -75,3 +75,5 @@ Drives
 	- write bootable = dd if=<iso> of=/dev/<drive> bs=<max size (4M recommended)>o
 
 Print or control kernel ring buffer = dmesg
+
+Show last login user and reboot = last

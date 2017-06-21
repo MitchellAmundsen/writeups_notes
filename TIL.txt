@@ -657,3 +657,37 @@ June 16th 2017
 		- allows for smaller file sizes than raw images
 		- allows changes to read-only base image of separe qcow file using copy of write
 
+June 21st 2017
+
+	BORG
+		- deduplicating backup program
+		- more space efficient as unchanged backup files are not stored again
+		- AES 256 encryption options
+		- lz4, zlib, lzma compression options
+
+	SSH Server Key
+		- used to create fingerprint to identify server
+		- used to avoid man in the middle attacks
+		- can be found in /etc/ssh/sshd_config
+
+	Vagrant
+		- creates development environment consistency 
+		- integrates with existing configuration managment tools (chef, puppet)
+		- works on mac, linux, windows
+		- creates virtual environments to develop on top of
+	
+	Packer
+		- automates creation machine image or container for multiple platforms
+		- creates identical machine images or containers 	
+
+	Terraform
+		- create and change production infrastructure with code
+		- open source
+		- codifies APIs into declarative config files
+		- config files can be treated as code
+
+	Vault
+		- secures and stores access tokens, passwords, certs, API keys, etc
+		- handles leasinig, revocation, key rolling, and auditing
+		- users can access an encrypted key/value store through API
+		- can generate AWS creds, SQL databases, x.509 certs, SSH creds, etc

@@ -28,3 +28,4 @@ Text-fu
 	- wc/nl
 		- wc gives word count in file
 		- nl shows numbered lines 
+
