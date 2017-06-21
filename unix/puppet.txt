@@ -49,7 +49,6 @@ Resources
 		- puppet resource user <username> = list specific user
 		- puppet resource package = list all packages
 		- puppet resource host = query system for host records
-	
 
 Classes
 	- a collection of resources as a single unit
@@ -70,6 +69,17 @@ Classes
 	- puppet parser validate motd.pp = validate your syntax
 	- puppet apply motd.pp
 
+Module
+	- module used as small chunks to help install a single working piece
+	- how
+		- module class located in init.pp
+		- module::install located in install.pp 
+			- should contain all resources related to getting the the fotware that the module manages onto the node
+		- module::config located in config.pp
+			- containts recoursed related to configuring the installed software
+		- module::service located in service.pp	
+			- remaining service resources and anything else related to running the software
+
 Autoloading
 	- manifests = puppet source code that defines class or type within a module
 	- module = directory for file of a given congifuration
@@ -82,7 +92,12 @@ Autoloading
 		- tests = examples showing how to declare classes, modules, and define types
 		- spec = rests for any plugin in the lib directory
 	- modulepath = conf setting to specify location of modules ($codedir/modules by default)
-	
+	- classes in module path can be declared in manifests
+	- auto loading
+		- puppet agent runs
+		- master compiles catalog
+		- agent finds and loads the manifests with class defined	
+
 Facter
 	- facter is a cross platform system profiler
 	- discovers and reports per-node facts as variables

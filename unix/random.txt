@@ -63,3 +63,15 @@ Upgrading
 	- upgrade = sudo do-release-upgrade
 	- -d for dev options
 	- ubuntu run "update-manager -c"
+
+Checksum = cksum <filename>
+
+Alias = alias foobar='<command>'
+
+Drives
+	- format = mkfs.ext3 /dev/<drive>
+	- unmount = umount /dev/<drive>
+	- list disks = fdisk -l
+	- write bootable = dd if=<iso> of=/dev/<drive> bs=<max size (4M recommended)>o
+
+Print or control kernel ring buffer = dmesg

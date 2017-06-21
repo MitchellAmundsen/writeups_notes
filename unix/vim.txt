@@ -28,3 +28,10 @@ tab pages
 set path - :set path={desired path}
 
 run unix command - :!<command>
+
+appending
+	insert text on previous line = O
+	insert text on next line = o
+	append text after cursor = a
+	append text at end of line = A
+

@@ -1,0 +1,30 @@
+
+Text-fu
+	- stdout
+		- use > to ouput text to file
+		- use >> to append text o file
+	- tee 
+		- outputs to two different streams
+		- ex: ls | tee output.txt (outputs to file and screen)
+	- env
+		- outputs all environment variables
+		- echo $USER givers username
+	- cut
+		- remove sections from each line of file
+		- -f to specift fields
+		- -d uses specified delimiter
+	- paste
+		- merge lines of file together
+		- -d to change delimiter to something instead of tab
+	- expand/unexpand
+		- expand = convert tabs to spaces
+		- unexpand = convert spaces back to tabs
+		- must output result to file to save
+	- uniq
+		- deduplicates values
+		- -c gives occurences of each line
+		- -u only gives unique
+		- -d only gives duplicates
+	- wc/nl
+		- wc gives word count in file
+		- nl shows numbered lines 
