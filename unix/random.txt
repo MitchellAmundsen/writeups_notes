@@ -3,6 +3,8 @@ nmcli - command line tool for network management
 
 Flush DNS = service nscd restart
 
+Current Directory = pwd
+
 Show all services/status = service --status-all
 
 Previous commands
@@ -18,4 +20,63 @@ Logs
 
 Sudo
 	- temporary root shell = sudo -i
-	
+
+Dropbox daemon = ~/.dropbox-dist/dropboxd
+
+ssh keys
+	- create ssh key = ssh-keygen -t rsa -b 4096 -C "<email>"
+	- enter ssh agent = eval "$(ssh-agent -s)"
+	- add ssh key = ssh-add !/.ssh/id_rsa
+	- key location = /home/<user>/.ssh/id_rsa
+
+Package stuff
+	- list all available packages = apt list
+	- update apt get before installing = apt-get update
+	- list repositories = apt-cache policy
+
+Openssl
+	- number of ciphers to choose from
+	- des3 encrypt example = openssl des3 < test.txt > test.txt.des3
+
+Lockscreen = xflock4, ctrl + alt + L
+
+List hardware = lshw
+
+Change Screen Output/Orientation
+	- list displays = xrandr --query
+
+TMUX
+	- tmux shortcut =  ctrl + b
+	- view tmux windows = tmux ls
+	- new session = tmux new -s <option session name>
+	- attach to existing session = tmux attach -t <option session name>
+	- detach from existing session (can come back later) = tmux detach
+	- kill session = tmux kill-session -t <session name>
+
+Sudo
+	- parsed when sudo is ran = /etc/sudoers.d  
+	- must use visudo to edit /etc/sudoers.d 
+
+Secure copy to hosts on network = scp
+
+Permission
+	- change file owner = chown root:root <filename>
+
+Upgrading
+	- upgrade = sudo do-release-upgrade
+	- -d for dev options
+	- ubuntu run "update-manager -c"
+
+Checksum = cksum <filename>
+
+Alias = alias foobar='<command>'
+
+Drives
+	- format = mkfs.ext3 /dev/<drive>
+	- unmount = umount /dev/<drive>
+	- list disks = fdisk -l
+	- write bootable = dd if=<iso> of=/dev/<drive> bs=<max size (4M recommended)>o
+
+Print or control kernel ring buffer = dmesg
+
+Show last login user and reboot = last
