@@ -15,3 +15,7 @@ Logs
 	- write to logs = logger "Hello World"
 	- display logs command = dmesg
 	- log file = /var/log/syslog
+
+Sudo
+	- temporary root shell = sudo -i
+	

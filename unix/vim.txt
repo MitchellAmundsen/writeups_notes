@@ -1,6 +1,12 @@
 
 cursor to top - gg
 cursor to bottom - G
+cursor to line - :{line number} or 42G
+
+cursor to end line - $
+cursor to beginning of line - 0
+cursor to <num> in line - <num>w
+cursor to lirst <letter> in line - f<letter>
 
 cursor located in middle of screen - zz
 cursor located at top of screen - zt
@@ -26,4 +32,5 @@ tab pages
 	ith tab normal mode - {i}gt
 
 set path - :set path={desired path}
+
 
