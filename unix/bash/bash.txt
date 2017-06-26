@@ -28,4 +28,12 @@ execution tracing
 	- set -x in script itself
 	- set +x to turn off in script
 
+sort
+	- -t specifies delimiter
+	- -k specifies field to sort on
+
+fmt
+	- format strings for readability of line length
+	- -w to specify character length per line
+
 

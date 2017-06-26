@@ -77,3 +77,5 @@ Drives
 Print or control kernel ring buffer = dmesg
 
 Show last login user and reboot = last
+
+Show linux processes = top
