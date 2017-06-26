@@ -18,6 +18,9 @@ Logs
 	- display logs command = dmesg
 	- log file = /var/log/syslog
 
+Sudo
+	- temporary root shell = sudo -i
+
 Dropbox daemon = ~/.dropbox-dist/dropboxd
 
 ssh keys
