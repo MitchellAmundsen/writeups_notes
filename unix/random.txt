@@ -82,3 +82,16 @@ Print or control kernel ring buffer = dmesg
 Show last login user and reboot = last
 
 Show linux processes = top
+
+Kill Process
+	- kill by pid = kill -9 <pid>
+	- kill by processname = killall -9 <processname>
+	- send signal to process based on name = pkill <name>
+	- kill process based on window = xkill
+
+Fileviewing
+	- all at once = cat
+	- scrollable = less (G to go to bottom)
+	- view end = tail
+	- view beginning = head
+

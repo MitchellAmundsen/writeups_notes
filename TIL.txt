@@ -691,3 +691,24 @@ June 21st 2017
 		- handles leasinig, revocation, key rolling, and auditing
 		- users can access an encrypted key/value store through API
 		- can generate AWS creds, SQL databases, x.509 certs, SSH creds, etc
+
+June 27th 2017
+
+	Promiscuous Mode
+		- mode that makes NICs pass all traffic to the CPU instead of only the frames it was intended to receive
+		- normally used for packet sniffing
+		- can sniff on traffic from devices on same hub, so switches are used to combat this
+		- also used for hardware virtualization
+
+	Supervisor
+		- starts crashed processes automatically and after os reboot
+		- can monitor memory with plugin
+		- can send email alerts with plugin
+		- written in python so custom plugins can be written
+
+	Monit
+		- can monitor process resource usage and restart based on that
+		- can restart crashed processes and after os reboot
+		- can send email alerts based on actions
+
+	
