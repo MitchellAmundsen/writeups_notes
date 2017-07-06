@@ -711,4 +711,42 @@ June 27th 2017
 		- can restart crashed processes and after os reboot
 		- can send email alerts based on actions
 
+
+June 28th 2017
+
+	systemd
+		- unit configuration tool
+		- manages processes in linux distributions
+		- goal is to unify linux configuration
+		
+June 29th 2017
+
+	SCSI
+		- allows 7 to 15 devices to be connected
+		- up to 80 MB/sec
+	IDE
+		- allows connection of two devices per channel
+		- 133 MB/sec in burst mode
+		- cheaper than SCSI
+	SATA
+		- offers hot plugging (components can be replaced without shut down)
+		- AHCI (advanced host controller interface) with is open source
+		- 1.5, 3, and 6 GB/sec interface	
+		- most popular currently for price and performance
+
+June 30th
+ 
+	CFG
+		- configuration file format used for storing settings
+		- dependent on application the settings are for
+		- plain text 
+		- deleting a CFG file will set program to default
+
+July 5th 
+	
+	Shard
+		- horizontal parition of data in database architecture
+		- each individual partition known as shard
+		- each shard held on separate db server instance to spread load
+		- some data may be present in all shards, some only in single shard
 	

@@ -1,0 +1,53 @@
+
+	- unit configuration tool
+	- unit = any resource that the system knows how to operate/manage
+	- features units are able to implement easily
+		- socket-based activation
+		- bus based activation
+		- path pased activation
+		- device based activation
+		- implicit dependency mapping
+		- instances and templates
+		- easy security hardening
+		- drop-ins and snippits
+	- systemd locations
+		- /lib/systemd/system
+			- systems copy of unit files
+			- software installed unit files
+		- /etc/systemd/system
+			- modifies system copy
+			- take precedent over all
+	- snippets 
+		- can override unit file or append with snippets
+		- create subdirectory named <unitfile>.d
+		- .conf files within subdirectory
+	- types of units
+		- .service
+		- .socket
+		- .device
+		- .mount
+		- .automount
+		- .swap
+		- .target
+		- .path
+		- .timer
+		- .snapshot
+		- .slice
+		- .scope
+	- unit section directives
+		- description = describe name and basic functionality
+		- documentation = location of uris, man pages, etc
+		- requires = units that this unit depends on
+		- wants = similar to requires but less strict
+		- bindsto = like requires but stops unit when depended on unit stops
+		- before = lists units that won't be started until the current unit is (should be used with requires, wants, bindto)
+		- after = lists units that will be starter before the current unit (same as before)
+		- conflicts = lists units that can't run at same time as this
+		- assert = checks aspects of running environment to decide if it should activate
+	- install section directives
+	
+	- systemctl restart <your service name> 
+		- needs to be done as changes to unit file won't be implemented
+		- can set exec connected to puppet file to do this
+	- run systemctl to get full list of services
+	- sudo systemctl status <service name> will give status of service
