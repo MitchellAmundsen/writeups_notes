@@ -750,3 +750,61 @@ July 5th
 		- each shard held on separate db server instance to spread load
 		- some data may be present in all shards, some only in single shard
 	
+July 17th
+
+	ESX
+		- vmware virtualization software
+		- integrates with kernal and vital os components
+		- not installed in an OS
+	
+	Asymmetric Traffic
+		- outbound traffic takes different routes than inbound traffic
+		- problematic with firewalls
+		- firewalls hold state information to allow traffic and will block asymmetric traffic
+		- differrent firewall permissions will also cause problems 
+
+	Logstash
+		- server stide data processing pipeling
+		- injests data from multiple sources simultaneously 
+		- sends data to stash or store in database
+		- input, filter, output pipeline
+		- uses grok for filtering
+		- custom plugins available for each step of pipeline
+
+July 20th
+
+	Rsyslog
+		- rocket-fast system for log processing
+		- forwards log messages over the network
+		- implements syslog protocol
+		- has content based filtering, flexible configuration, TCP transport 
+
+	Kafka
+		- data streaming platform
+		- lets you publish and subscribe to streams of records 
+		- lets you store streams of records in fault-tolerant ways
+		- allows record preocessing as they occur
+		- helps build data pipeline between systems or applications
+		- transforms or reacts to data in realtime
+		
+July 21st
+	
+	Hieradata
+		- puppet built-in key value lookup system
+		- uses yaml or json files by default	
+		- hiera helps avoid reptition with default patterns that can be overriden
+		- commonly used with rols and profiles	
+
+	Log4j
+		- java based logging utility 
+		- provides log levels (off, fatal, error, warn, info, debug, trace)
+	
+	Logback
+		- successor to log4j
+		- improvements over log4j
+			- faster implementation
+			- automatic reload of config files
+			- extensive testing
+			- graceful recovery from failures
+			- filtering capabilities
+		

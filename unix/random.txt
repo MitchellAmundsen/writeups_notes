@@ -52,6 +52,17 @@ TMUX
 	- attach to existing session = tmux attach -t <option session name>
 	- detach from existing session (can come back later) = tmux detach
 	- kill session = tmux kill-session -t <session name>
+	- split into two windows horizontally =  %
+	- split into two windows vertically = "
+	- navigate panes = <arrow key>
+	- creating new window = c
+	- previous window = p
+	- next window = n
+	- deteach session = d
+	- full screen pane = z
+	- resize in direction = C<arrow key>
+	- rename window = ,
+	- scroll in selected window = [
 
 Sudo
 	- parsed when sudo is ran = /etc/sudoers.d  
@@ -72,10 +83,10 @@ Checksum = cksum <filename>
 Alias = alias foobar='<command>'
 
 Drives
-	- format = mkfs.ext3 /dev/<drive>
+	- format = mkfs.fat -F 32 -I /dev/<drive>
 	- unmount = umount /dev/<drive>
 	- list disks = fdisk -l
-	- write bootable = dd if=<iso> of=/dev/<drive> bs=<max size (4M recommended)>o
+	- write bootable = dd if=<iso> of=/dev/<drive> bs=<max size (4M recommended)>
 
 Print or control kernel ring buffer = dmesg
 
@@ -88,6 +99,8 @@ Kill Process
 	- kill by processname = killall -9 <processname>
 	- send signal to process based on name = pkill <name>
 	- kill process based on window = xkill
+
+Find process = pgrep <name>
 
 Fileviewing
 	- all at once = cat
