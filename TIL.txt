@@ -808,3 +808,12 @@ July 21st
 			- graceful recovery from failures
 			- filtering capabilities
 		
+August 2nd 
+
+	NetBIOS
+		- network basic input/output system protocol
+		- three basic services
+			- name service
+			- datagram distribution for connectionless communication
+			- session service for connection-oriented communication
+
