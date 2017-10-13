@@ -108,3 +108,10 @@ Fileviewing
 	- view end = tail
 	- view beginning = head
 
+Run in background = 
+	- <command> &
+	- <command>
+	  [CTRL+Z]
+	  bg
+
+

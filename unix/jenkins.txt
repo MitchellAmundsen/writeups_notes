@@ -1,0 +1,20 @@
+
+- jenkins used to create pipelines for automating and standardizing building, testing, and deploying
+- create new pipeline under new item in jenkins
+	- add ssh key
+	- add repository to pull from
+	- will detect new branches and pull requests
+- pipeline
+	- Jenkinsfile in top level directory
+	- declares agent (what runs the pipeline)
+	- stages of pipeline (each stage has a step)
+		- build stage
+		- test stage
+		- sanity check (human input)
+		- deploy stage
+	- steps
+		- what to run often a command
+	- post
+		- a number of steps for after the stages
+		- can send email, hipchat, slack messages upon success/failure
+- environement variables can be set in the pipeline 

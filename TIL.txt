@@ -817,3 +817,40 @@ August 2nd
 			- datagram distribution for connectionless communication
 			- session service for connection-oriented communication
 
+August 7th 2017
+
+	Amazon SQS
+		- simple queue service
+		- a message queue that allows transformations through queue
+		- minimal throughput
+		- highly scalable with small operations throughout	
+
+	AWS Direct Connect
+		- dedicated network from your premises to AWS
+		- uses 802.1q vlans
+		- allows access to public resources and private resources within VPC on same connection
+
+	Apache HBase
+		- open source, non-relational, distributed
+		- fault-tolerant way of storing large quantities of sparse data
+		
+	Sparse Data
+		- small amounts of information within large collection of empty/unimportant data
+		- type of computer file that uses space more efficently when the file is almost empty
+		- use meta data representing empty blocks instead of actual empty blocks
+
+	Phoenix
+		- SQL skin for HBase
+		- allows SQL queries to query HBase which is non-relational
+		- actually improves performance
+
+
+August 8th 2017
+
+	Blue-Green Deployment
+		- technique of deplying two production environments to reduce downtime
+		- steps
+			- updates are pushed to one environment that is taken offline
+			- once verified, updates are pushed into production alongside older version
+			- after production logs are checked and environment tested, older version taken offline
+		- allows for easy rollback upon error
