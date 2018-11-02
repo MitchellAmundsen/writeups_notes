@@ -5,7 +5,15 @@ Flush DNS = service nscd restart
 
 Current Directory = pwd
 
-Show all services/status = service --status-all
+Services
+	- Show all services/status = service --status-all
+	- systemd list units = systemctl list-units
+	- systemd unit files = systemctl list-unit-files
+	- start stop = systemctl start/stop <unit-file>
+	- show status = systemctl show/status <unit-file>
+	- unit files in /etc/systemd/ or /usr/lib/systemd primarily
+	- show systemd logs = journalctl
+	- show specific service logs = journalctl -u <unit-file>
 
 Previous commands
 	- show list of previous commands = history

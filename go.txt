@@ -1,0 +1,94 @@
+
+packages
+	- programs start running in main package
+	- import
+		import (
+ 			"fmt"
+ 			"math/rand"
+ 		)
+		import "another"
+	- exports
+		- names with capital letters exported
+		- math.Pi is exported from math package
+	
+functions
+	- parameter type comes after variable name
+		- func example(x int, y int) int {
+			return x + y
+		  }
+	- if parameter share type you can shorten
+		- func example(x, y int) int 
+	- function can return any number of results
+		- swap function returns two strings
+		func main() {
+			a, b := swap ("hello", "world")
+			fmt.Println(a, b)
+		}
+	- naked return
+		- return statement without arguments returns the named values
+		- can harm readibility in longer functions
+		func split(sum int) (x, y int) {
+			x = sum * 4 / 9
+			y = sum - x
+			return
+		}
+
+variables
+	- var statement declares list of variables
+	- type is last
+	- var can be at package or function level
+		var c, python, java bool
+	- initializers
+		- type can be ommitted if present
+		- one per variable
+		var i, j int = 1, 2
+		var c, python, java = true, false, "no"
+	- short declarations
+		- := can be used inside a function
+		k := 3
+		c, python, java := true, false, "no"
+	- types
+		- bool
+		- string
+		- int, int8, int16, int32, int64
+		- uint, uint8, uint16, uint32, uint64, uintptr
+		- byte (alias for uint8)
+		- rune (alias for int32)
+		- float32, float64
+		- complex64, complex128
+	- default value
+		- 0 for numeric
+		- false for boolean
+		- "" for strings
+	- T(v) converts value v to type T
+		i := 42
+		f := float64(i)
+		u := uint(f)
+	- undeclared type are inferenced
+		- if value is from previous variable, it will use that type
+		- otherwise, will use precision to determine
+
+constants
+	- declared with const keyword
+	- constants can be character, string, boolean, numeric
+	- cannot use short declaration :=
+	- untyped constant takes type needed by context	
+
+for
+	- only loop construct in go
+	- three components separated by semicolons
+	- no parenthesis
+		for i := 0; i < 10; i++ {
+	- init and post statement are optional
+		for ; sum < 1000; {
+	- can drop semicolons and be while loop essentially
+		for sum < 1000 {
+
+if
+	- does not need parenthesis
+	if x < 0
+	- can declare variable in if statement but will only last until end of statement including else blocks
+	if v:= math.Pow(x, n); v < lim {
+	- can use scientific numbers to count decimal places
+	if x < 1e-15
+	
