@@ -1,0 +1,44 @@
+Overview
+  - stores things at block level (data)
+  - map reduce (jobs)
+  - multi-cluster
+
+Pieces
+  - filesystem
+    - namenode
+      - master
+      - tracks block allocation in memory
+      - manages block replication (a,b)(b,c)(c,a)
+      - only needs to live on two for redundancy
+    - dfs nodes
+      - workers
+    - zookeeper	
+      - manages name nodes
+      - ensures consistency across nodes
+      - lives on namenodes
+    - hadoop zkfs
+      - keeps track of leader election
+      - talks to zookeeper on behalf of namenode
+    - resource manager
+      - manages compute resources
+      - applies map reduce to run jobs where data lives locally
+      - only needs to live on two for redundancy
+    - journal
+      - runs on master 1 and 2 like namenodes
+      - namenode tells journal intent to write
+      - journal tells zookeeper of this intent
+
+commands/files
+  - master
+    - /etc/hadoop/conf/slaves
+      - lists workers address
+    - /etc/hadoop/conf/exclude
+      - list of workers to be decommed and data moved to slaves
+    - /etc/facter/facts.d/hadoop.yaml
+    - hiera
+      - controls componenets (hadoop, zookeeper, hbase)
+    - hdfs dfs -ls <dir name>
+      - shows all files
+      - empty name list available dir
+    - hdfs dfs
+      - shows available commands
