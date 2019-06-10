@@ -1,0 +1,37 @@
+
+amazon eks
+    - kubernetes as a managed service
+        - at least 2 api server nodes, 3 etcd nodes over 3 AZs
+        - manages HA 
+        - run over multiple availability zones
+        - exposes api to interact with
+    - setup 
+        - create eks cluster
+        - launch eks nodes that register with cluster
+        - configure cluster with kube tool (kubectl)
+
+spinnaker
+    - application management
+        - application: collection of clusters including firewalls and loadbalancers
+        - cluster: logical groupings of server groups, not nexessarily mapping to kube clusters
+        - server group: collection of instances running software (artifact, number of instances, autoscale, metadata)
+    - application deployment
+        - pipeline consisting of sequence of actions known as stages
+        -  stage
+            - atomic building block for pipeline
+            - can sequence stages in a pipeline in any order
+            - deploy, resize, disable, manual judgement, etc
+        - deployment strategies 
+            - blue/green
+            - rolling blue/green
+            - canary
+
+spinnaker and eks
+    - accounts
+        - managing account: spinnaker auths as
+            - two-subnet vpc
+            - iam roles
+            - instance profiles
+            - security group
+            - eks cluster
+        - managed account: event account you want to modify resources in

@@ -1,0 +1,103 @@
+BAZEL
+
+workspace
+    - directory that contains source files
+    - text file named WORKSPACE may be empty or may reference external dependencies 
+
+packages
+    - primary unit of code organziation
+    - directory beneath top-level dir that has BUILD or BUILD.bazel file
+    - is all of the sub-directories under the package dir
+
+targets
+    - files 
+        - source files: human written/checked in
+        - generated files: generated from build tool
+    - rules
+        - specify relationship between input and output files
+
+
+
+Gazelle
+    - build file generator for GO
+    - can update build file to add new sources and dependencies 
+
+***STEP1***
+    
+WORKSPACE
+
+# Load external tooling for bazel
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "io_bazel_rules_go",
+    url = "https://github.com/bazelbuild/rules_go/releases/download/0.18.5/rules_go-0.18.5.tar.gz",
+    sha256 = "a82a352bffae6bee4e95f68a8d80a70e87f42c4741e6a448bec11998fcc82329",
+)
+
+http_archive(
+    name = "bazel_gazelle",
+    urls = ["https://github.com/bazelbuild/bazel-gazelle/releases/download/0.17.0/bazel-gazelle-0.17.0.tar.gz"],
+    sha256 = "3c681998538231a2d24d0c07ed5a7658cb72bfb5fd4bf9911157c0e9ac6a2687",
+)
+
+# Register go orchestrations
+load("@io_bazel_rules_go//go:deps.bzl", "go_rules_dependencies", "go_register_toolchains")
+
+go_rules_dependencies()
+
+go_register_toolchains()
+
+# Register gazelle
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies", "go_repository")
+
+gazelle_dependencies()
+
+
+
+BUILD.bazel
+
+# Load information related to the service that we can pass around
+load("//:VERSION.bzl", "SERVICE", "VERSION")
+
+package(default_visibility = ["//visibility:public"])
+
+# Pull in the rules for go and gazelle
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+gazelle(
+    name = "gazelle",
+    prefix = "github.icebrg.io/icebrgio/portal-status-api",
+)
+
+***STEP2*** 
+
+touch go.mod
+
+echo "module github.icebrg.io/icebrgio/portal-status-api" > go.mod
+
+***STEP3***
+
+GOPATH=/tmp go build
+
+//enumerates all external dependencies in go.sum
+
+***STEP4***
+
+bazel run //:gazelle -- update-repos -from_file=go.mod
+
+// adds all dependencies on go.mod to WORKSPACE
+
+bazel run //:gazelle 
+
+// adds every external dep into BUILD.bazel
+
+bazel build //:portal-status-api
+
+
+
+
+
+
+

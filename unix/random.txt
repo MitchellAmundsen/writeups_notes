@@ -122,4 +122,18 @@ Run in background =
 	  [CTRL+Z]
 	  bg
 
+Vagrant Box
+	- add vagrant user with vagrant as password
+	- add insecure vagrant public key to /hom/vagrant/.ssh/authorized_keys
+	- vagrant package --base <name of sensor>
 
+Load
+    - a count of the number of processes using or waiting for the CPU at a single point in time
+    - if load avg is less than one, every processes that needed cpu could use it immediately without being blocked
+    - if load avg is greater than one, processes are being blocked
+    - if you have 4 cpu cores, then the load must be greater than 4 to mean blockage
+
+Watch
+    - watch -n 10 -d cat /sys/class/net/wlp58s0/statistics/rx_packets
+        - every ten seconds print sys file and shows diff
+        - good for watching frequency of updating of file

@@ -1,0 +1,36 @@
+
+General
+- default create one index per day
+- a document is a single thing (syslog message)
+- a shard is a collection of documents
+- if a cluster has a replication factor of 2, one shard should exist one 2 nodes 
+- shards will be mirrored upon a node dying to reach replication factor
+
+Rolling Restart
+- https://www.elastic.co/guide/en/elasticsearch/guide/current/_rolling_restarts.html
+- idea is to disable reallocation, restart service and wait for it to join cluster, reenable shard allocation, repeat
+- es api driven
+    - ssh to es box
+    - https://www.elastic.co/guide/en/elasticsearch/reference/current/cat.html
+    - curl -s http://localhost:9200/_cat/
+        - shows endpoints
+    - curl -s http://localhost:9200/_cat/nodes
+        - shows nodes in cluster 
+        - m = masternode 
+        - d = data node
+        - md = master and data node
+        - * = current elected master
+    - curl -s http://localhost:9200/_cluster/settings | jq
+        - cluster.allocation.enable = none means dont shuffle data if node added or rmd
+        - exclude ips removes nodes from cluster
+- cerebro = 3rd party web ui 
+    - http://syslog-es1.uswest2.icebrg.io:8080/
+    - http://localhost:9200
+    - rest api tool
+        - top left of cerebro
+        - good for forumalating api requests
+    - https://www.elastic.co/guide/en/elasticsearch/reference/current/allocation-filtering.html
+        - excludes ip from cluster with that request
+    - https://www.elastic.co/guide/en/elasticsearch/guide/current/_rolling_restarts.html
+        - enables and disables reallocation 
+  

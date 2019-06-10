@@ -42,3 +42,11 @@ appending
 	append text at end of line = A
 
 F2 toggles paste mode
+
+Writing to beginning of multiple lines
+    - move cursor to beginning of line
+    - ctrl v to enter visual mode
+    - scroll down number of block you desire
+    - shift + I
+    - type output
+    - esc to apply to selected lines
