@@ -1,0 +1,44 @@
+
+fly cli:
+    - submit pipeline config:  fly -t example set-pipeline --pipeline example-pipeline --config example-pipeline.yaml
+    - vars
+        - ((testvar)) in pipeline yaml will be evaluated
+        - can be evalueated through cmd line: --var "testvar"=$(cat secret.txt)
+        - can be evaluated through cred yaml: --load-vars-from credentials.yaml
+        - or at runtime through a credential manager
+    - validate pipeline: fly validate-pipeline --config pipeline.yaml
+    
+    - list all pipelines: fly -t example pipelines
+    - rename pipeline: fly -t example rename-pipeline --old-name old-pipeline --new-name new-pipeline
+    - pause pipeline (block runs): fly -t example pause-pipeline --pipeline my-pipeline
+    - unpause pipeline: fly -t example unpause-pipeline --pipeline my-pipeline
+    - fetch pipeline: fly -t example get-pipeline --pipeline my-pipeline
+    - destroy pipeline: fly -t example destroy-pipeline --pipeline my-pipeline
+
+
+resources:
+    - name: required, name of resource
+    - type: required, resource type
+    - source: location of resource, blindly passed at runtime
+    - version: version to pin resource to across pipeline
+    - check_every: default 1m
+
+
+resource_types:
+    - concourse comes with resource types off the bat, otherwise user defined
+    - has similar attributes as resources
+
+
+jobs:
+    - name: required, name of job
+    - plan: required, sequence of steps to execute
+    - on_success: step to execute when job succeeds
+    - on_failure: ''
+    - on_abort: ''
+    - ensure: step to execute to regardless of job success
+
+
+tasks:
+    - smallest configurable unit of work
+    - platform: required string, platform task should be run on
+    - image_resource

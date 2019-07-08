@@ -24,6 +24,7 @@ Rolling Restart
         - cluster.allocation.enable = none means dont shuffle data if node added or rmd
         - exclude ips removes nodes from cluster
 - cerebro = 3rd party web ui 
+    - always located on master (can find master ip from cerebro)
     - http://syslog-es1.uswest2.icebrg.io:8080/
     - http://localhost:9200
     - rest api tool
@@ -33,4 +34,10 @@ Rolling Restart
         - excludes ip from cluster with that request
     - https://www.elastic.co/guide/en/elasticsearch/guide/current/_rolling_restarts.html
         - enables and disables reallocation 
-  
+
+- troubleshooting problem
+    - hop on master (can use cerebro to find master address)
+    - look at /var/log/elasticsearch/es-01/event-service-v2.log
+    - map id to node ip
+        - curl '<master_ip>:9200/_cat/nodes?v&h=id,ip,port,v,m' | less 
+        - search for first 4 letters of node
