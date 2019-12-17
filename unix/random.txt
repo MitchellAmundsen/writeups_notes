@@ -137,3 +137,12 @@ Watch
     - watch -n 10 -d cat /sys/class/net/wlp58s0/statistics/rx_packets
         - every ten seconds print sys file and shows diff
         - good for watching frequency of updating of file
+
+Kernel Cgroups/Namespaces
+    - Cgroups/namespaces control which system level information and tools are available to a container (clock, interfaces, devices)
+        - cgroup: limit resource use (memory, CPU, block I/O, network)
+        - namespaces: provide processes wih their own view of the system(pid, net, mnt, uts, ipc)
+    - OS per container can spinup own cgroups/namespace
+    - Pods within kubernetes are groupings of containers that share cgroup and namespaces
+        - pods can see themselves as localhost as namespace/cgroups treats them as same
+        - shared resources based on namespace
